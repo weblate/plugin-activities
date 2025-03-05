@@ -25,7 +25,6 @@ namespace GaletteActivities\Entity;
 
 use ArrayObject;
 use Galette\Core\Db;
-use Galette\Core\Login;
 use Analog\Analog;
 use Galette\Entity\Group;
 use Galette\Helpers\EntityHelper;
@@ -244,7 +243,7 @@ class Activity
                 'comment'               => $this->comment ?? new Expression('NULL')
             );
 
-            if (!isset($this->id) || $this->id == '') {
+            if (empty($this->id)) {
                 //we're inserting a new activity
                 $this->creation_date = date("Y-m-d");
                 $values['creation_date'] = $this->creation_date;

@@ -24,9 +24,7 @@ declare(strict_types=1);
 namespace GaletteActivities\Entity;
 
 use ArrayObject;
-use DateTime;
 use Galette\Core\Db;
-use Galette\Core\Login;
 use Galette\Entity\Adherent;
 use Galette\Entity\PaymentType;
 use Analog\Analog;
@@ -272,7 +270,7 @@ class Subscription
                 'comment' => $this->comment
             );
 
-            if (!isset($this->id) || $this->id == '') {
+            if (empty($this->id)) {
                 //we're inserting a new subscription
                 $insert = $this->zdb->insert($this->getTableName());
                 $insert->values($values);
