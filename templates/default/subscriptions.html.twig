@@ -51,13 +51,25 @@
 
 {% block header %}
     {% set columns = [
-        {'label': '#'},
+        {
+            'label': '#',
+            'collapse': true
+        },
         {'label': _T("Activity", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_ACTIVITY')},
         {'label': _T("Member"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_MEMBER')},
-        {'label': _T("Subscription date", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_SUBSCRIPTIONDATE')},
-        {'label': _T("End date", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_ENDDATE')},
+        {
+            'label': _T("Subscription date", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_SUBSCRIPTIONDATE'),
+            'collapse': true
+        },
+        {
+            'label': _T("End date", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_ENDDATE'),
+            'collapse': true
+        },
         {'label': _T("Amount", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_AMOUNT')},
-        {'label': _T("Paid", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_PAID')}
+        {
+            'label': _T("Paid", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_PAID'),
+            'collapse': true
+        }
     ] %}
     {{ parent() }}
 {% endblock %}
@@ -180,14 +192,14 @@
     {% for ordre, subscription in subscriptions_list %}
         {% set rclass = subscription.getRowClass() %}
                 <tr>
-                    <td class="{{ rclass }} right" data-scope="id">
+                    <td class="{{ rclass }} right collapsing" data-scope="id">
                         {% if preferences.pref_show_id %}
                             {{ subscription.getId() }}
                         {% else %}
                             {{ ordre + 1 + (filters.current_page - 1) * numrows }}
                         {% endif %}
                     </td>
-                    <td class="{{ rclass }} nowrap username_row" data-scope="row">
+                    <td class="{{ rclass }} username_row" data-scope="row">
                         {% set bid = subscription.getId() %}
                         <span class="ui checkbox">
                             <input type="checkbox" name="entries_sel[]" value="{{ bid }}"/>
@@ -199,10 +211,10 @@
                             {{ subscription.getMember().sfullname }}
                         </a>
                     </td>
-                    <td class="{{ rclass }}" data-col-label="{{ _T("Subscription date", "activities") }}">{{ subscription.getSubscriptionDate() }}</td>
-                    <td class="{{ rclass }}" data-col-label="{{ _T("End date", "activities") }}">{{ subscription.getEndDate() }}</td>
+                    <td class="{{ rclass }} collapsing" data-col-label="{{ _T("Subscription date", "activities") }}">{{ subscription.getSubscriptionDate() }}</td>
+                    <td class="{{ rclass }} collapsing" data-col-label="{{ _T("End date", "activities") }}">{{ subscription.getEndDate() }}</td>
                     <td class="{{ rclass }}" data-col-label="{{ _T("Amount", "activities") }}">{{ subscription.getAmount() }}</td>
-                    <td class="{{ rclass }} center" data-col-label="{% if subscription.isPaid() %}{{ _T("Paid", "activities") }}{% else %}{{ _T("Not paid", "activities") }}{% endif %}">
+                    <td class="{{ rclass }} center collapsing" data-col-label="{% if subscription.isPaid() %}{{ _T("Paid", "activities") }}{% else %}{{ _T("Not paid", "activities") }}{% endif %}">
                         <i class="money bill wave{% if not subscription.isPaid() %} red{% endif %} icon tooltip" data-html="{% if subscription.isPaid() %}{{ _T("Paid", "activities") }}{% else %}{{ _T("Not paid", "activities") }}{% endif %}"></i>
                         <span class="visually-hidden">
                         {% if subscription.isPaid() %}
@@ -212,7 +224,7 @@
                         {% endif %}
                         </span>
                     </td>
-                    <td class="{{ rclass }} center nowrap actions_row">
+                    <td class="{{ rclass }} center actions_row collapsing">
             {% set actions = [] %}
             {% if login.isAdmin() or login.isStaff() or (login.isGroupManager() and subscription.getActivity().getGroup() in login.managed_groups) %}
                 {% set actions = (actions ?? [])|merge([
