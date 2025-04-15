@@ -189,7 +189,9 @@
                     </td>
                     <td class="{{ rclass }} nowrap username_row" data-scope="row">
                         {% set bid = subscription.getId() %}
-                        <input type="checkbox" name="entries_sel[]" value="{{ bid }}"/>
+                        <span class="ui checkbox">
+                            <input type="checkbox" name="entries_sel[]" value="{{ bid }}"/>
+                        </span>
                         <a href="{{ url_for("activities_activity_edit", {"id": subscription.getActivityId()}) }}">{{ subscription.getActivity().getName() }}</a>
                     </td>
                     <td class="{{ rclass }}" data-col-label="{{ _T("Member") }}">
