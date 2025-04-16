@@ -41,8 +41,8 @@
 
 {% block infoline_actions %}
     <a
-            class="ui tiny labeled icon button"
-            href="{{ url_for("activities_subscription_add") }}"
+        class="ui tiny labeled icon button"
+        href="{{ url_for("activities_subscription_add") }}"
     >
         <i class="plus circle green icon" aria-hidden="true"></i>
         {{ _T('New subscription', 'activities') }}
@@ -55,19 +55,27 @@
             'label': '#',
             'collapse': true
         },
-        {'label': _T("Activity", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_ACTIVITY')},
-        {'label': _T("Member"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_MEMBER')},
         {
-            'label': _T("Subscription date", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_SUBSCRIPTIONDATE'),
+            'label': _T("Activity", "activities"),
+            'order': constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_ACTIVITY')},
+        {
+            'label': _T("Member"),
+            'order': constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_MEMBER')},
+        {
+            'label': _T("Subscription date", "activities"),
+            'order': constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_SUBSCRIPTIONDATE'),
             'collapse': true
         },
         {
-            'label': _T("End date", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_ENDDATE'),
+            'label': _T("End date", "activities"),
+            'order': constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_ENDDATE'),
             'collapse': true
         },
-        {'label': _T("Amount", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_AMOUNT')},
+        {'label': _T("Amount", "activities"),
+            'order': constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_AMOUNT')},
         {
-            'label': _T("Paid", "activities"), order: constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_PAID'),
+            'label': _T("Paid", "activities"),
+            'order': constant('GaletteActivities\\Repository\\Subscriptions::ORDERBY_PAID'),
             'collapse': true
         }
     ] %}
@@ -214,7 +222,7 @@
                     <td class="{{ rclass }} collapsing" data-col-label="{{ _T("Subscription date", "activities") }}">{{ subscription.getSubscriptionDate() }}</td>
                     <td class="{{ rclass }} collapsing" data-col-label="{{ _T("End date", "activities") }}">{{ subscription.getEndDate() }}</td>
                     <td class="{{ rclass }}" data-col-label="{{ _T("Amount", "activities") }}">{{ subscription.getAmount() }}</td>
-                    <td class="{{ rclass }} center collapsing" data-col-label="{% if subscription.isPaid() %}{{ _T("Paid", "activities") }}{% else %}{{ _T("Not paid", "activities") }}{% endif %}">
+                    <td class="{{ rclass }} center collapsing" data-col-label="{{ _T("Paid", "activities") }}">
                         <i class="money bill wave{% if not subscription.isPaid() %} red{% endif %} icon tooltip" data-html="{% if subscription.isPaid() %}{{ _T("Paid", "activities") }}{% else %}{{ _T("Not paid", "activities") }}{% endif %}"></i>
                         <span class="visually-hidden">
                         {% if subscription.isPaid() %}
