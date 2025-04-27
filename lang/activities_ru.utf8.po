@@ -8,7 +8,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2024-09-10 22:29+0200\n"
 "PO-Revision-Date: 2025-04-28 16:03+0000\n"
-"Last-Translator: Sotski Eugene <jekakmail@gmail.com>\n"
+"Last-Translator: Evgeniy Khramov <65224669+thejenja@users.noreply.github.com>"
+"\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/galette/"
 "plugins-activities/ru/>\n"
 "Language: ru\n"
@@ -122,7 +123,7 @@ msgstr "Имя"
 #: ../lib/GaletteActivities/Entity/Activity.php:416
 #: ../tempcache/activities.html.twig:100 ../tempcache/activities.html.twig:167
 msgid "Type"
-msgstr ""
+msgstr "Тип"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:420
 #: ../tempcache/activities.html.twig:100 ../tempcache/activities.html.twig:173
@@ -145,7 +146,7 @@ msgstr ""
 #: ../lib/GaletteActivities/Entity/Subscription.php:597
 #: ../tempcache/subscription.html.twig:121
 msgid "Comment"
-msgstr ""
+msgstr "Комментарий"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:189
 msgid "Activity is mandatory"
@@ -192,7 +193,7 @@ msgstr ""
 #: ../tempcache/subscriptions.html.twig:449
 #: ../tempcache/subscription.html.twig:138
 msgid "Amount"
-msgstr ""
+msgstr "Сумма"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:581
 msgid "Payment method"
