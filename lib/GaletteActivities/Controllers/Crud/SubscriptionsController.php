@@ -290,8 +290,7 @@ class SubscriptionsController extends AbstractPluginController
 
         //check if current attached member is part of the list
         if (
-            isset($subscription)
-            && $subscription->getMemberId() > 0
+            $subscription->getMemberId() > 0
             && !isset($members[$subscription->getMemberId()])
         ) {
             $members[$subscription->getMemberId()] = Adherent::getSName($this->zdb, $subscription->getMemberId(), true);
