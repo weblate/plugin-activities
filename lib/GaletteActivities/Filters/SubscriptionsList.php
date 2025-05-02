@@ -68,7 +68,7 @@ class SubscriptionsList extends Pagination
     private string $query;
 
     /** @var array<string> */
-    protected array $list_fields = array(
+    protected array $list_fields = [
         'activity_filter',
         'member_filter',
         'paid_filter',
@@ -77,13 +77,13 @@ class SubscriptionsList extends Pagination
         'start_date_filter',
         'end_date_filter',
         'selected'
-    );
+    ];
 
     /** @var array<string>  */
-    protected array $virtuals_list_fields = array(
+    protected array $virtuals_list_fields = [
         'rstart_date_filter',
         'rend_date_filter'
-    );
+    ];
 
     /**
      * Default constructor

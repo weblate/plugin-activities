@@ -119,13 +119,13 @@ class ActivitiesController extends AbstractPluginController
         $this->view->render(
             $response,
             $this->getTemplate('activities'),
-            array(
+            [
                 'page_title'            => _T("Activities management", "activities"),
                 'require_dialog'        => true,
                 'activities'            => $list,
                 'nb_activities'         => $activities->getCount(),
                 'filters'               => $filters
-            )
+            ]
         );
         return $response;
     }
@@ -207,14 +207,14 @@ class ActivitiesController extends AbstractPluginController
         $this->view->render(
             $response,
             $this->getTemplate('activity'),
-            array(
+            [
                 'autocomplete'  => true,
                 'page_title'    => $title,
                 'activity'      => $activity,
                 // pseudo random int
                 'time'          => time(),
                 'groups'        => $groups_list
-            )
+            ]
         );
         return $response;
     }

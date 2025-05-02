@@ -23,7 +23,6 @@ declare(strict_types=1);
 
 namespace GaletteActivities\Filters;
 
-use Analog\Analog;
 use Galette\Core\Pagination;
 use Galette\Enums\SQLOrder;
 use GaletteActivities\Repository\Activities;

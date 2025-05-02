@@ -110,7 +110,7 @@ class Activities extends Repository
      */
     private function buildOrderClause(?array $fields = null): array
     {
-        $order = array();
+        $order = [];
 
         switch ($this->filters->orderby) {
             case self::ORDERBY_DATE:
@@ -155,9 +155,9 @@ class Activities extends Repository
             }
 
             $countSelect->columns(
-                array(
+                [
                     'count' => new Expression('count(DISTINCT ac.' . Activity::PK . ')')
-                )
+                ]
             );
 
             $have = $select->having;

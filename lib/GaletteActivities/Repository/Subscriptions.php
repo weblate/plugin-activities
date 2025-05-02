@@ -128,11 +128,11 @@ class Subscriptions
             $select->columns($fieldsList);
 
             $select->join(
-                array('a' => PREFIX_DB . Adherent::TABLE),
+                ['a' => PREFIX_DB . Adherent::TABLE],
                 's.' . Adherent::PK . '= a.' . Adherent::PK
             );
             $select->join(
-                array('ac' => PREFIX_DB . ACTIVITIES_PREFIX . Activity::TABLE),
+                ['ac' => PREFIX_DB . ACTIVITIES_PREFIX . Activity::TABLE],
                 's.' . Activity::PK . '= ac.' . Activity::PK
             );
 
@@ -181,9 +181,9 @@ class Subscriptions
 
             $sumSelect->reset($sumSelect::ORDER);
             $sumSelect->columns(
-                array(
+                [
                     'sum' => new Expression('SUM(payment_amount)')
-                )
+                ]
             );
 
             $results = $this->zdb->execute($sumSelect);
@@ -303,7 +303,7 @@ class Subscriptions
             return true;
         } else {
             Analog::log(
-                'Trying to order by ' . $field_name  . ' while it is not in ' .
+                'Trying to order by ' . $field_name . ' while it is not in ' .
                 'selected fields.',
                 Analog::WARNING
             );
@@ -321,7 +321,7 @@ class Subscriptions
      */
     private function buildOrderClause(?array $fields = null): array
     {
-        $order = array();
+        $order = [];
 
         switch ($this->filters->orderby) {
             case self::ORDERBY_ACTIVITY:
@@ -388,9 +388,9 @@ class Subscriptions
             }
 
             $countSelect->columns(
-                array(
+                [
                     'count' => new Expression('count(DISTINCT s.' . Subscription::PK . ')')
-                )
+                ]
             );
 
             $have = $select->having;

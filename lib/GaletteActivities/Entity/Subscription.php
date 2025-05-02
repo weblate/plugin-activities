@@ -91,7 +91,7 @@ class Subscription
     {
         try {
             $select = $this->zdb->select($this->getTableName());
-            $select->where(array(self::PK => $id));
+            $select->where([self::PK => $id]);
 
             $results = $this->zdb->execute($select);
 
@@ -181,7 +181,7 @@ class Subscription
      */
     public function check(array $values): bool
     {
-        $this->errors = array();
+        $this->errors = [];
 
         if (!isset($values['activity']) || empty($values['activity']) || $values['activity'] == -1) {
             $this->errors[] = _T('Activity is mandatory', 'activities');
@@ -257,7 +257,7 @@ class Subscription
 
         try {
             $this->zdb->connection->beginTransaction();
-            $values = array(
+            $values = [
                 Activity::PK => $this->id_activity,
                 Adherent::PK => $this->id_member,
                 'is_paid' => ($this->paid ?:
@@ -268,7 +268,7 @@ class Subscription
                 'subscription_date' => $this->subscription_date,
                 'end_date' => $this->end_date,
                 'comment' => $this->comment
-            );
+            ];
 
             if (empty($this->id)) {
                 //we're inserting a new subscription
@@ -554,48 +554,48 @@ class Subscription
      */
     protected function setFields(): self
     {
-        $this->fields = array(
-            self::PK => array(
+        $this->fields = [
+            self::PK => [
                 'label'    => 'Subscription id', //not a field in the form
                 'propname' => 'id'
-            ),
-            Activity::PK => array(
+            ],
+            Activity::PK => [
                 'label'    => _T('Activity', 'activities'),
                 'propname' => 'id_activity'
-            ),
-            Adherent::PK => array(
+            ],
+            Adherent::PK => [
                 'label'    => _T('Member', 'activities'),
                 'propname' => 'id_member'
-            ),
-            'is_paid' => array(
+            ],
+            'is_paid' => [
                 'label'    => _T('Is paid', 'activities'),
                 'propname' => 'is_paid'
-            ),
-            'payment_amount' => array(
+            ],
+            'payment_amount' => [
                 'label'    => _T('Amount', 'activities'),
                 'propname' => 'payment_amount'
-            ),
-            'payment_method' => array(
+            ],
+            'payment_method' => [
                 'label'    => _T('Payment method', 'activities'),
                 'propname' => 'payment_method'
-            ),
-            'creation_date' => array(
+            ],
+            'creation_date' => [
                 'label'    => _T('Creation date', 'activities'),
                 'propname' => 'creation_date'
-            ),
-            'subscription_date' => array(
+            ],
+            'subscription_date' => [
                 'label'    => _T('Subscription date', 'activities'),
                 'propname' => 'subscription_date'
-            ),
-            'end_date'      => array(
+            ],
+            'end_date'      => [
                 'label'    => _T("End date"),
                 'propname' => 'end_date'
-            ),
-            'comment' => array(
+            ],
+            'comment' => [
                 'label'    => _T('Comment', 'activities'),
                 'propname' => 'comment'
-            )
-        );
+            ]
+        ];
 
         return $this;
     }

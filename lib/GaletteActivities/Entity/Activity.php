@@ -86,7 +86,7 @@ class Activity
     {
         try {
             $select = $this->zdb->select($this->getTableName());
-            $select->where(array(self::PK => $id));
+            $select->where([self::PK => $id]);
             $results = $this->zdb->execute($select);
 
             if ($results->count() > 0) {
@@ -158,7 +158,7 @@ class Activity
             }
             Analog::log(
                 'Unable to delete activity ' . $this->name .
-                ' (' . $this->id  . ') |' . $e->getMessage(),
+                ' (' . $this->id . ') |' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;
@@ -175,7 +175,7 @@ class Activity
      */
     public function check(array $values): bool
     {
-        $this->errors = array();
+        $this->errors = [];
 
         if (empty($values['name'])) {
             $this->errors[] = _T('Name is mandatory', 'activities');
@@ -235,13 +235,13 @@ class Activity
         global $hist;
 
         try {
-            $values = array(
+            $values = [
                 'name'                  => $this->name,
                 'type'                  => $this->type,
                 'price'                 => $this->price ?? new Expression('NULL'),
                 'id_group'              => $this->id_group ?? new Expression('NULL'),
                 'comment'               => $this->comment ?? new Expression('NULL')
-            );
+            ];
 
             if (empty($this->id)) {
                 //we're inserting a new activity
@@ -372,7 +372,7 @@ class Activity
      */
     protected function getTableName(): string
     {
-        return ACTIVITIES_PREFIX  . self::TABLE;
+        return ACTIVITIES_PREFIX . self::TABLE;
     }
 
     /**
@@ -402,36 +402,36 @@ class Activity
      */
     protected function setFields(): self
     {
-        $this->fields = array(
-            self::PK => array(
+        $this->fields = [
+            self::PK => [
                 'label'    => 'Activity id', //not a field in the form
                 'propname' => 'id'
-            ),
-            'name' => array(
+            ],
+            'name' => [
                 'label'    => _T('Name', 'activities'),
                 'propname' => 'name'
-            ),
-            'type' => array(
+            ],
+            'type' => [
                 'label'    => _T('Type', 'activities'),
                 'propname' => 'type'
-            ),
-            'price' => array(
+            ],
+            'price' => [
                 'label'    => _T('Price', 'activities'),
                 'propname' => 'price'
-            ),
-            'id_group' => array(
+            ],
+            'id_group' => [
                 'label'    => _T('Group', 'activities'),
                 'propname' => 'id_group'
-            ),
-            'creation_date' => array(
+            ],
+            'creation_date' => [
                 'label'    => _T('Creation date', 'activities'),
                 'propname' => 'creation_date'
-            ),
-            'comment' => array(
+            ],
+            'comment' => [
                 'label'    => _T('Comment', 'activities'),
                 'propname' => 'comment'
-            )
-        );
+            ]
+        ];
 
         return $this;
     }

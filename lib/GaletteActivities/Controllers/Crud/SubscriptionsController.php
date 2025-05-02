@@ -307,7 +307,7 @@ class SubscriptionsController extends AbstractPluginController
             $this->getTemplate('subscription'),
             array_merge(
                 $route_params,
-                array(
+                [
                     'autocomplete'      => true,
                     'page_title'        => $title,
                     'subscription'      => $subscription,
@@ -316,7 +316,7 @@ class SubscriptionsController extends AbstractPluginController
                     'require_calendar'  => true,
                     // pseudo random int
                     'time'              => time()
-                )
+                ]
             )
         );
         return $response;
