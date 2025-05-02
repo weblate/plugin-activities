@@ -135,6 +135,10 @@ class Subscription extends GaletteTestCase
             ],
             $subscription->getErrors()
         );
+        $this->expectLogEntry(
+            \Analog::ERROR,
+            'Activity is mandatory',
+        );
 
         $data = [
             'activity' => $activity_id,
@@ -148,6 +152,10 @@ class Subscription extends GaletteTestCase
             ],
             $subscription->getErrors()
         );
+        $this->expectLogEntry(
+            \Analog::ERROR,
+            'Member is mandatory',
+        );
 
         $data = [
             'activity' => $activity_id,
@@ -160,6 +168,10 @@ class Subscription extends GaletteTestCase
                 'End date is mandatory'
             ],
             $subscription->getErrors()
+        );
+        $this->expectLogEntry(
+            \Analog::ERROR,
+            'Subscription date is mandatory',
         );
 
         $data = [
@@ -174,6 +186,10 @@ class Subscription extends GaletteTestCase
                 'End date is mandatory'
             ],
             $subscription->getErrors()
+        );
+        $this->expectLogEntry(
+            \Analog::ERROR,
+            '- Wrong date format (Y-m-d) for Subscription date!',
         );
 
         $data = [
@@ -264,6 +280,12 @@ class Subscription extends GaletteTestCase
                 'Subscription already exists for this member and activity'
             ],
             $subscription->getErrors()
+        );
+        $this->expectLogEntry(
+            \Analog::ERROR,
+            $this->zdb->isPostgres() ?
+                'duplicate key value violates unique constraint "galette_activities_subscriptions_id_activity_id_adh_key"' :
+                "Duplicate entry '3-1' for key"
         );
     }
 
