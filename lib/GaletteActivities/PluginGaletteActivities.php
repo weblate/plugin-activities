@@ -146,4 +146,14 @@ class PluginGaletteActivities extends GalettePlugin
     {
         return [];
     }
+
+    /**
+     * Get current logged-in user dashboards contents
+     *
+     * @return array<int, string|array<string,mixed>>
+     */
+    public static function getMyDashboardsContents(): array
+    {
+        return [];
+    }
 }
