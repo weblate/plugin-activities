@@ -201,11 +201,7 @@
         {% set rclass = subscription.getRowClass() %}
                 <tr>
                     <td class="{{ rclass }} right collapsing" data-scope="id">
-                        {% if preferences.pref_show_id %}
-                            {{ subscription.getId() }}
-                        {% else %}
-                            {{ ordre + 1 + (filters.current_page - 1) * numrows }}
-                        {% endif %}
+                        {{ subscription.getId() }}
                     </td>
                     <td class="{{ rclass }} username_row" data-scope="row">
                         {% set bid = subscription.getId() %}
