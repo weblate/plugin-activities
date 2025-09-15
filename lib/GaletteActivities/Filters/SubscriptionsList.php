@@ -196,8 +196,8 @@ class SubscriptionsList extends Pagination
                         $this->$name = $value;
                     } elseif ($value !== null) {
                         Analog::log(
-                            '[SubscriptionsList] Value for property `' . $name .
-                            '` should be an array (' . gettype($value) . ' given)',
+                            '[SubscriptionsList] Value for property `' . $name
+                            . '` should be an array (' . gettype($value) . ' given)',
                             Analog::WARNING
                         );
                     }

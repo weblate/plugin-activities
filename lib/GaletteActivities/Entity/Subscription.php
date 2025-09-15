@@ -163,8 +163,8 @@ class Subscription
                 $this->zdb->connection->rollBack();
             }
             Analog::log(
-                'Unable to delete subscription ' .
-                ' (' . $this->id . ') |' . $e->getMessage(),
+                'Unable to delete subscription '
+                . ' (' . $this->id . ') |' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;
@@ -236,8 +236,8 @@ class Subscription
 
         if (count($this->errors) > 0) {
             Analog::log(
-                'Some errors has been threw attempting to edit/store a subscription' . "\n" .
-                print_r($this->errors, true),
+                'Some errors has been threw attempting to edit/store a subscription' . "\n"
+                . print_r($this->errors, true),
                 Analog::ERROR
             );
             return false;
@@ -260,8 +260,8 @@ class Subscription
             $values = [
                 Activity::PK => $this->id_activity,
                 Adherent::PK => $this->id_member,
-                'is_paid' => ($this->paid ?:
-                    ($this->zdb->isPostgres() ? 'false' : 0)),
+                'is_paid' => ($this->paid
+                    ?: ($this->zdb->isPostgres() ? 'false' : 0)),
                 'payment_method' => $this->payment_method,
                 'payment_amount' => $this->payment_amount,
                 'creation_date' => $this->creation_date,
@@ -330,8 +330,8 @@ class Subscription
         } catch (\Exception $e) {
             $this->zdb->connection->rollBack();
             Analog::log(
-                'Something went wrong :\'( | ' . $e->getMessage() . "\n" .
-                $e->getTraceAsString(),
+                'Something went wrong :\'( | ' . $e->getMessage() . "\n"
+                . $e->getTraceAsString(),
                 Analog::ERROR
             );
             throw $e;
@@ -542,8 +542,8 @@ class Subscription
      */
     public function getRowClass(bool $public = false): string
     {
-        $strclass = 'subscription-' .
-            ($this->isPaid() ? 'paid' : 'notpaid');
+        $strclass = 'subscription-'
+            . ($this->isPaid() ? 'paid' : 'notpaid');
         return $strclass;
     }
 

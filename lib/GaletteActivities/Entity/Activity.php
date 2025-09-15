@@ -157,8 +157,8 @@ class Activity
                 $this->zdb->connection->rollBack();
             }
             Analog::log(
-                'Unable to delete activity ' . $this->name .
-                ' (' . $this->id . ') |' . $e->getMessage(),
+                'Unable to delete activity ' . $this->name
+                . ' (' . $this->id . ') |' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;
@@ -215,8 +215,8 @@ class Activity
 
         if (count($this->errors) > 0) {
             Analog::log(
-                'Error(s) checking activity before store:' . "\n" .
-                print_r($this->errors, true),
+                'Error(s) checking activity before store:' . "\n"
+                . print_r($this->errors, true),
                 Analog::ERROR
             );
             return false;
@@ -295,8 +295,8 @@ class Activity
             }
         } catch (\Exception $e) {
             Analog::log(
-                'Something went wrong :\'( | ' . $e->getMessage() . "\n" .
-                $e->getTraceAsString(),
+                'Something went wrong :\'( | ' . $e->getMessage() . "\n"
+                . $e->getTraceAsString(),
                 Analog::ERROR
             );
             throw $e;

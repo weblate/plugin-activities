@@ -283,9 +283,9 @@ class Subscription extends GaletteTestCase
         );
         $this->expectLogEntry(
             \Analog::ERROR,
-            $this->zdb->isPostgres() ?
-                'duplicate key value violates unique constraint "galette_activities_subscriptions_id_activity_id_adh_key"' :
-                "Duplicate entry '3-1' for key"
+            $this->zdb->isPostgres()
+                ? 'duplicate key value violates unique constraint "galette_activities_subscriptions_id_activity_id_adh_key"'
+                : "Duplicate entry '3-1' for key"
         );
     }
 
