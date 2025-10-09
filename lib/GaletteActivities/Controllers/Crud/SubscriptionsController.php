@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright © 2003-2024 The Galette Team
+ * Copyright © 2003-2025 The Galette Team
  *
  * This file is part of Galette (https://galette.eu).
  *
@@ -61,7 +61,7 @@ class SubscriptionsController extends AbstractPluginController
      *
      * @return Response
      */
-    public function add(Request $request, Response $response, int $id_adh = null): Response
+    public function add(Request $request, Response $response, ?int $id_adh = null): Response
     {
         return $this->edit($request, $response, null, 'add', $id_adh);
     }
@@ -92,7 +92,7 @@ class SubscriptionsController extends AbstractPluginController
      *
      * @return Response
      */
-    public function list(Request $request, Response $response, string $option = null, string|int $value = null): Response
+    public function list(Request $request, Response $response, ?string $option = null, string|int|null $value = null): Response
     {
         $filters = $this->session->{$this->getFilterName($this->getDefaultFilterName())} ?? new SubscriptionsList();
 
@@ -250,7 +250,7 @@ class SubscriptionsController extends AbstractPluginController
      *
      * @return Response
      */
-    public function edit(Request $request, Response $response, int $id = null, string $action = 'edit', int $id_adh = null): Response
+    public function edit(Request $request, Response $response, ?int $id = null, string $action = 'edit', ?int $id_adh = null): Response
     {
         $route_params = [];
 
@@ -290,8 +290,7 @@ class SubscriptionsController extends AbstractPluginController
 
         //check if current attached member is part of the list
         if (
-            isset($subscription)
-            && $subscription->getMemberId() > 0
+            $subscription->getMemberId() > 0
             && !isset($members[$subscription->getMemberId()])
         ) {
             $members[$subscription->getMemberId()] = Adherent::getSName($this->zdb, $subscription->getMemberId(), true);
@@ -307,7 +306,7 @@ class SubscriptionsController extends AbstractPluginController
             $this->getTemplate('subscription'),
             array_merge(
                 $route_params,
-                array(
+                [
                     'autocomplete'      => true,
                     'page_title'        => $title,
                     'subscription'      => $subscription,
@@ -316,7 +315,7 @@ class SubscriptionsController extends AbstractPluginController
                     'require_calendar'  => true,
                     // pseudo random int
                     'time'              => time()
-                )
+                ]
             )
         );
         return $response;
@@ -332,7 +331,7 @@ class SubscriptionsController extends AbstractPluginController
      *
      * @return Response
      */
-    public function doEdit(Request $request, Response $response, int $id = null, string $action = 'edit'): Response
+    public function doEdit(Request $request, Response $response, ?int $id = null, string $action = 'edit'): Response
     {
         $post = $request->getParsedBody();
         $subscription = new Subscription($this->zdb);

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright © 2003-2024 The Galette Team
+ * Copyright © 2003-2025 The Galette Team
  *
  * This file is part of Galette (https://galette.eu).
  *
@@ -24,9 +24,7 @@ declare(strict_types=1);
 namespace GaletteActivities\Entity;
 
 use ArrayObject;
-use DateTime;
 use Galette\Core\Db;
-use Galette\Core\Login;
 use Galette\Entity\Adherent;
 use Galette\Entity\PaymentType;
 use Analog\Analog;
@@ -93,7 +91,7 @@ class Subscription
     {
         try {
             $select = $this->zdb->select($this->getTableName());
-            $select->where(array(self::PK => $id));
+            $select->where([self::PK => $id]);
 
             $results = $this->zdb->execute($select);
 
@@ -165,8 +163,8 @@ class Subscription
                 $this->zdb->connection->rollBack();
             }
             Analog::log(
-                'Unable to delete subscription ' .
-                ' (' . $this->id . ') |' . $e->getMessage(),
+                'Unable to delete subscription '
+                . ' (' . $this->id . ') |' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;
@@ -183,7 +181,7 @@ class Subscription
      */
     public function check(array $values): bool
     {
-        $this->errors = array();
+        $this->errors = [];
 
         if (!isset($values['activity']) || empty($values['activity']) || $values['activity'] == -1) {
             $this->errors[] = _T('Activity is mandatory', 'activities');
@@ -238,8 +236,8 @@ class Subscription
 
         if (count($this->errors) > 0) {
             Analog::log(
-                'Some errors has been threw attempting to edit/store a subscription' . "\n" .
-                print_r($this->errors, true),
+                'Some errors has been threw attempting to edit/store a subscription' . "\n"
+                . print_r($this->errors, true),
                 Analog::ERROR
             );
             return false;
@@ -259,20 +257,20 @@ class Subscription
 
         try {
             $this->zdb->connection->beginTransaction();
-            $values = array(
+            $values = [
                 Activity::PK => $this->id_activity,
                 Adherent::PK => $this->id_member,
-                'is_paid' => ($this->paid ?:
-                    ($this->zdb->isPostgres() ? 'false' : 0)),
+                'is_paid' => ($this->paid
+                    ?: ($this->zdb->isPostgres() ? 'false' : 0)),
                 'payment_method' => $this->payment_method,
                 'payment_amount' => $this->payment_amount,
                 'creation_date' => $this->creation_date,
                 'subscription_date' => $this->subscription_date,
                 'end_date' => $this->end_date,
                 'comment' => $this->comment
-            );
+            ];
 
-            if (!isset($this->id) || $this->id == '') {
+            if (empty($this->id)) {
                 //we're inserting a new subscription
                 $insert = $this->zdb->insert($this->getTableName());
                 $insert->values($values);
@@ -332,8 +330,8 @@ class Subscription
         } catch (\Exception $e) {
             $this->zdb->connection->rollBack();
             Analog::log(
-                'Something went wrong :\'( | ' . $e->getMessage() . "\n" .
-                $e->getTraceAsString(),
+                'Something went wrong :\'( | ' . $e->getMessage() . "\n"
+                . $e->getTraceAsString(),
                 Analog::ERROR
             );
             throw $e;
@@ -544,8 +542,8 @@ class Subscription
      */
     public function getRowClass(bool $public = false): string
     {
-        $strclass = 'subscription-' .
-            ($this->isPaid() ? 'paid' : 'notpaid');
+        $strclass = 'subscription-'
+            . ($this->isPaid() ? 'paid' : 'notpaid');
         return $strclass;
     }
 
@@ -556,48 +554,48 @@ class Subscription
      */
     protected function setFields(): self
     {
-        $this->fields = array(
-            self::PK => array(
+        $this->fields = [
+            self::PK => [
                 'label'    => 'Subscription id', //not a field in the form
                 'propname' => 'id'
-            ),
-            Activity::PK => array(
+            ],
+            Activity::PK => [
                 'label'    => _T('Activity', 'activities'),
                 'propname' => 'id_activity'
-            ),
-            Adherent::PK => array(
+            ],
+            Adherent::PK => [
                 'label'    => _T('Member', 'activities'),
                 'propname' => 'id_member'
-            ),
-            'is_paid' => array(
+            ],
+            'is_paid' => [
                 'label'    => _T('Is paid', 'activities'),
                 'propname' => 'is_paid'
-            ),
-            'payment_amount' => array(
+            ],
+            'payment_amount' => [
                 'label'    => _T('Amount', 'activities'),
                 'propname' => 'payment_amount'
-            ),
-            'payment_method' => array(
+            ],
+            'payment_method' => [
                 'label'    => _T('Payment method', 'activities'),
                 'propname' => 'payment_method'
-            ),
-            'creation_date' => array(
+            ],
+            'creation_date' => [
                 'label'    => _T('Creation date', 'activities'),
                 'propname' => 'creation_date'
-            ),
-            'subscription_date' => array(
+            ],
+            'subscription_date' => [
                 'label'    => _T('Subscription date', 'activities'),
                 'propname' => 'subscription_date'
-            ),
-            'end_date'      => array(
+            ],
+            'end_date'      => [
                 'label'    => _T("End date"),
                 'propname' => 'end_date'
-            ),
-            'comment' => array(
+            ],
+            'comment' => [
                 'label'    => _T('Comment', 'activities'),
                 'propname' => 'comment'
-            )
-        );
+            ]
+        ];
 
         return $this;
     }

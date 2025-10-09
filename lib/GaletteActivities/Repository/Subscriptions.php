@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright © 2003-2024 The Galette Team
+ * Copyright © 2003-2025 The Galette Team
  *
  * This file is part of Galette (https://galette.eu).
  *
@@ -61,7 +61,7 @@ class Subscriptions
      * @param Db                 $zdb     Database instance
      * @param ?SubscriptionsList $filters Filtering
      */
-    public function __construct(Db $zdb, SubscriptionsList $filters = null)
+    public function __construct(Db $zdb, ?SubscriptionsList $filters = null)
     {
         $this->zdb = $zdb;
 
@@ -128,11 +128,11 @@ class Subscriptions
             $select->columns($fieldsList);
 
             $select->join(
-                array('a' => PREFIX_DB . Adherent::TABLE),
+                ['a' => PREFIX_DB . Adherent::TABLE],
                 's.' . Adherent::PK . '= a.' . Adherent::PK
             );
             $select->join(
-                array('ac' => PREFIX_DB . ACTIVITIES_PREFIX . Activity::TABLE),
+                ['ac' => PREFIX_DB . ACTIVITIES_PREFIX . Activity::TABLE],
                 's.' . Activity::PK . '= ac.' . Activity::PK
             );
 
@@ -181,9 +181,9 @@ class Subscriptions
 
             $sumSelect->reset($sumSelect::ORDER);
             $sumSelect->columns(
-                array(
+                [
                     'sum' => new Expression('SUM(payment_amount)')
-                )
+                ]
             );
 
             $results = $this->zdb->execute($sumSelect);
@@ -229,8 +229,8 @@ class Subscriptions
             }
 
             if (
-                $this->filters->payment_type_filter !== null &&
-                $this->filters->payment_type_filter != -1
+                isset($this->filters->payment_type_filter)
+                && $this->filters->payment_type_filter != -1
             ) {
                 $select->where->equalTo(
                     'payment_method',
@@ -303,8 +303,8 @@ class Subscriptions
             return true;
         } else {
             Analog::log(
-                'Trying to order by ' . $field_name  . ' while it is not in ' .
-                'selected fields.',
+                'Trying to order by ' . $field_name . ' while it is not in '
+                . 'selected fields.',
                 Analog::WARNING
             );
             return false;
@@ -319,9 +319,9 @@ class Subscriptions
      *
      * @return array<string> SQL ORDER clauses
      */
-    private function buildOrderClause(array $fields = null): array
+    private function buildOrderClause(?array $fields = null): array
     {
-        $order = array();
+        $order = [];
 
         switch ($this->filters->orderby) {
             case self::ORDERBY_ACTIVITY:
@@ -388,9 +388,9 @@ class Subscriptions
             }
 
             $countSelect->columns(
-                array(
+                [
                     'count' => new Expression('count(DISTINCT s.' . Subscription::PK . ')')
-                )
+                ]
             );
 
             $have = $select->having;
@@ -403,7 +403,7 @@ class Subscriptions
             $results = $this->zdb->execute($countSelect);
 
             $this->count = (int)$results->current()->count;
-            if (isset($this->filters) && $this->count > 0) {
+            if ($this->count > 0) {
                 $this->filters->setCounter($this->count);
             }
         } catch (\Exception $e) {

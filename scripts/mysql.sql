@@ -10,7 +10,7 @@ CREATE TABLE galette_activities_activities (
   name varchar(150) NOT NULL,
   type varchar(3) NOT NULL default '',
   price decimal(15, 2) default NULL,
-  id_group int(10) default NULL,
+  id_group int unsigned default NULL,
   creation_date date NOT NULL,
   comment text,
   PRIMARY KEY (id_activity),

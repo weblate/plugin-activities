@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright © 2003-2024 The Galette Team
+ * Copyright © 2003-2025 The Galette Team
  *
  * This file is part of Galette (https://galette.eu).
  *
@@ -25,7 +25,6 @@ namespace GaletteActivities\Entity;
 
 use ArrayObject;
 use Galette\Core\Db;
-use Galette\Core\Login;
 use Analog\Analog;
 use Galette\Entity\Group;
 use Galette\Helpers\EntityHelper;
@@ -64,7 +63,7 @@ class Activity
      *                                                      a specific activity, or null to just
      *                                                      instanciate object
      */
-    public function __construct(Db $zdb, int|ArrayObject $args = null)
+    public function __construct(Db $zdb, int|ArrayObject|null $args = null)
     {
         $this->zdb = $zdb;
         $this->setFields();
@@ -87,7 +86,7 @@ class Activity
     {
         try {
             $select = $this->zdb->select($this->getTableName());
-            $select->where(array(self::PK => $id));
+            $select->where([self::PK => $id]);
             $results = $this->zdb->execute($select);
 
             if ($results->count() > 0) {
@@ -158,8 +157,8 @@ class Activity
                 $this->zdb->connection->rollBack();
             }
             Analog::log(
-                'Unable to delete activity ' . $this->name .
-                ' (' . $this->id  . ') |' . $e->getMessage(),
+                'Unable to delete activity ' . $this->name
+                . ' (' . $this->id . ') |' . $e->getMessage(),
                 Analog::ERROR
             );
             return false;
@@ -176,7 +175,7 @@ class Activity
      */
     public function check(array $values): bool
     {
-        $this->errors = array();
+        $this->errors = [];
 
         if (empty($values['name'])) {
             $this->errors[] = _T('Name is mandatory', 'activities');
@@ -216,8 +215,8 @@ class Activity
 
         if (count($this->errors) > 0) {
             Analog::log(
-                'Error(s) checking activity before store:' . "\n" .
-                print_r($this->errors, true),
+                'Error(s) checking activity before store:' . "\n"
+                . print_r($this->errors, true),
                 Analog::ERROR
             );
             return false;
@@ -236,15 +235,15 @@ class Activity
         global $hist;
 
         try {
-            $values = array(
+            $values = [
                 'name'                  => $this->name,
                 'type'                  => $this->type,
                 'price'                 => $this->price ?? new Expression('NULL'),
                 'id_group'              => $this->id_group ?? new Expression('NULL'),
                 'comment'               => $this->comment ?? new Expression('NULL')
-            );
+            ];
 
-            if (!isset($this->id) || $this->id == '') {
+            if (empty($this->id)) {
                 //we're inserting a new activity
                 $this->creation_date = date("Y-m-d");
                 $values['creation_date'] = $this->creation_date;
@@ -296,8 +295,8 @@ class Activity
             }
         } catch (\Exception $e) {
             Analog::log(
-                'Something went wrong :\'( | ' . $e->getMessage() . "\n" .
-                $e->getTraceAsString(),
+                'Something went wrong :\'( | ' . $e->getMessage() . "\n"
+                . $e->getTraceAsString(),
                 Analog::ERROR
             );
             throw $e;
@@ -373,7 +372,7 @@ class Activity
      */
     protected function getTableName(): string
     {
-        return ACTIVITIES_PREFIX  . self::TABLE;
+        return ACTIVITIES_PREFIX . self::TABLE;
     }
 
     /**
@@ -403,36 +402,36 @@ class Activity
      */
     protected function setFields(): self
     {
-        $this->fields = array(
-            self::PK => array(
+        $this->fields = [
+            self::PK => [
                 'label'    => 'Activity id', //not a field in the form
                 'propname' => 'id'
-            ),
-            'name' => array(
+            ],
+            'name' => [
                 'label'    => _T('Name', 'activities'),
                 'propname' => 'name'
-            ),
-            'type' => array(
+            ],
+            'type' => [
                 'label'    => _T('Type', 'activities'),
                 'propname' => 'type'
-            ),
-            'price' => array(
+            ],
+            'price' => [
                 'label'    => _T('Price', 'activities'),
                 'propname' => 'price'
-            ),
-            'id_group' => array(
+            ],
+            'id_group' => [
                 'label'    => _T('Group', 'activities'),
                 'propname' => 'id_group'
-            ),
-            'creation_date' => array(
+            ],
+            'creation_date' => [
                 'label'    => _T('Creation date', 'activities'),
                 'propname' => 'creation_date'
-            ),
-            'comment' => array(
+            ],
+            'comment' => [
                 'label'    => _T('Comment', 'activities'),
                 'propname' => 'comment'
-            )
-        );
+            ]
+        ];
 
         return $this;
     }

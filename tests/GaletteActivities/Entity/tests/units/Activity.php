@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright © 2003-2024 The Galette Team
+ * Copyright © 2003-2025 The Galette Team
  *
  * This file is part of Galette (https://galette.eu).
  *
@@ -85,6 +85,10 @@ class Activity extends GaletteTestCase
         ];
         $this->assertFalse($activity->check($data));
         $this->assertSame(['Name is mandatory'], $activity->getErrors());
+        $this->expectLogEntry(
+            \Analog::ERROR,
+            'Name is mandatory'
+        );
 
         //required activity name
         $data = [
@@ -94,6 +98,10 @@ class Activity extends GaletteTestCase
         ];
         $this->assertFalse($activity->check($data));
         $this->assertSame(['Type is too long'], $activity->getErrors());
+        $this->expectLogEntry(
+            \Analog::ERROR,
+            'Type is too long'
+        );
 
         //add new activity
         $data = [

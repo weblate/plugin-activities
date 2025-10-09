@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Copyright © 2003-2024 The Galette Team
+ * Copyright © 2003-2025 The Galette Team
  *
  * This file is part of Galette (https://galette.eu).
  *
@@ -25,6 +25,7 @@ namespace GaletteActivities\Filters;
 
 use Analog\Analog;
 use Galette\Core\Pagination;
+use Galette\Enums\SQLOrder;
 use Galette\Helpers\DatesHelper;
 use GaletteActivities\Repository\Subscriptions;
 
@@ -53,21 +54,21 @@ class SubscriptionsList extends Pagination
     public const DATE_SUBSCRIPTION = 1;
     public const DATE_CREATION = 2;
     //filters
-    private string|int|null $activity_filter;
-    private string|int|null $member_filter;
+    private string|int|null $activity_filter; //@phpstan-ignore-line
+    private string|int|null $member_filter; //@phpstan-ignore-line
 
-    private int|string $paid_filter;
+    private int|string $paid_filter; //@phpstan-ignore-line
     private int $payment_type_filter;
     private ?int $date_field = null;
-    private ?string $start_date_filter;
-    private ?string $end_date_filter;
+    private ?string $start_date_filter; //@phpstan-ignore-line
+    private ?string $end_date_filter; //@phpstan-ignore-line
 
     /** @var array<int> */
     private array $selected;
     private string $query;
 
     /** @var array<string> */
-    protected array $list_fields = array(
+    protected array $list_fields = [
         'activity_filter',
         'member_filter',
         'paid_filter',
@@ -76,13 +77,13 @@ class SubscriptionsList extends Pagination
         'start_date_filter',
         'end_date_filter',
         'selected'
-    );
+    ];
 
     /** @var array<string>  */
-    protected array $virtuals_list_fields = array(
+    protected array $virtuals_list_fields = [
         'rstart_date_filter',
         'rend_date_filter'
-    );
+    ];
 
     /**
      * Default constructor
@@ -105,11 +106,11 @@ class SubscriptionsList extends Pagination
     /**
      * Return the default direction for ordering
      *
-     * @return string ASC or DESC
+     * @return SQLOrder
      */
-    protected function getDefaultDirection(): string
+    protected function getDefaultDirection(): SQLOrder
     {
-        return self::ORDER_DESC;
+        return SQLOrder::DESC;
     }
 
     /**
@@ -195,8 +196,8 @@ class SubscriptionsList extends Pagination
                         $this->$name = $value;
                     } elseif ($value !== null) {
                         Analog::log(
-                            '[SubscriptionsList] Value for property `' . $name .
-                            '` should be an array (' . gettype($value) . ' given)',
+                            '[SubscriptionsList] Value for property `' . $name
+                            . '` should be an array (' . gettype($value) . ' given)',
                             Analog::WARNING
                         );
                     }

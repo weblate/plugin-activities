@@ -48,11 +48,17 @@
 
 {% block header %}
     {% set columns = [
-        {'label': '#'},
+        {
+            'label': '#',
+            'collapse': true
+        },
         {'label': _T("Name", "activities"), order: constant('GaletteActivities\\Repository\\Activities::ORDERBY_NAME')},
         {'label': _T("Type", "activities")},
         {'label': _T("Price", "activities")},
-        {'label': _T("Creation date", "activities"), order: constant('GaletteActivities\\Repository\\Activities::ORDERBY_DATE')},
+        {
+            'label': _T("Creation date", "activities"), order: constant('GaletteActivities\\Repository\\Activities::ORDERBY_DATE'),
+            'collapse': true
+        },
         {'label': _T("Group", "activities")},
     ] %}
     {{ parent() }}
@@ -61,22 +67,18 @@
 {% block body %}
     {% for ordre, activity in activities %}
         <tr class="{{ loop.index is odd ? 'odd' : 'even' }}">
-            <td class="right" data-scope="id">
-                {% if preferences.pref_show_id %}
-                    {{ activity.getId() }}
-                {% else %}
-                    {{ ordre + 1 + (filters.current_page - 1) * numrows }}
-                {% endif %}
+            <td class="right collapsing" data-scope="id">
+                {{ activity.getId() }}
             </td>
-            <td class="nowrap username_row" data-scope="row">
+            <td class="username_row" data-scope="row">
                 {% set aid = activity.getId() %}
                 <a href="{{ url_for("activities_activity_edit", {"id": aid}) }}">{{ activity.getName() }}</a>
             </td>
             <td data-col-label="{{ _T("Type", "activities") }}">{{ activity.getType() }}</td>
             <td data-col-label="{{ _T("Price", "activities") }}">{% if activity.getPrice() %}{{ activity.getPrice()|number_format(2) }}{% endif %}</td>
-            <td data-col-label="{{ _T("Creation date", "activities") }}">{{ activity.getCreationDate() }}</td>
+            <td class="collapsing" data-col-label="{{ _T("Creation date", "activities") }}">{{ activity.getCreationDate() }}</td>
             <td data-col-label="{{ _T("Group", "activities") }}">{%  if activity.getGroup() %}{{ activity.getGroup().getFullName() }}{% endif %}</td>
-            <td class="center nowrap actions_row">
+            <td class="center actions_row collapsing">
                 {% set actions = [
                     {
                         'label': _T("%1$s: edit information", "activities")|replace({"%1$s": activity.getName()}),
