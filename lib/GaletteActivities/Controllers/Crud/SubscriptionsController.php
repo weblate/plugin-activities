@@ -55,9 +55,9 @@ class SubscriptionsController extends AbstractPluginController
     /**
      * Add page
      *
-     * @param Request      $request  PSR Request
-     * @param Response     $response PSR Response
-     * @param integer|null $id_adh   Member id
+     * @param Request  $request  PSR Request
+     * @param Response $response PSR Response
+     * @param int|null $id_adh   Member id
      *
      * @return Response
      */
@@ -85,10 +85,10 @@ class SubscriptionsController extends AbstractPluginController
     /**
      * List page
      *
-     * @param Request             $request  PSR Request
-     * @param Response            $response PSR Response
-     * @param string|null         $option   One of 'page' or 'order'
-     * @param string|integer|null $value    Value of the option
+     * @param Request         $request  PSR Request
+     * @param Response        $response PSR Response
+     * @param string|null     $option   One of 'page' or 'order'
+     * @param string|int|null $value    Value of the option
      *
      * @return Response
      */
@@ -504,7 +504,7 @@ class SubscriptionsController extends AbstractPluginController
      * @param array $args Route arguments
      * @param array $post POST values
      *
-     * @return boolean
+     * @return bool
      */
     protected function doDelete(array $args, array $post): bool
     {

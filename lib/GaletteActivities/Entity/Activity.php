@@ -80,7 +80,7 @@ class Activity
      *
      * @param int $id the identifiant for the activity to load
      *
-     * @return boolean
+     * @return bool
      */
     public function load(int $id): bool
     {
@@ -130,7 +130,7 @@ class Activity
     /**
      * Remove specified activity
      *
-     * @return boolean
+     * @return bool
      */
     public function remove(): bool
     {
@@ -171,7 +171,7 @@ class Activity
      * @param array<string, mixed> $values All values to check, basically the $_POST array
      *                                     after sending the form
      *
-     * @return boolean
+     * @return bool
      */
     public function check(array $values): bool
     {
@@ -228,7 +228,7 @@ class Activity
     /**
      * Store the activity
      *
-     * @return boolean
+     * @return bool
      */
     public function store(): bool
     {
@@ -306,7 +306,7 @@ class Activity
     /**
      * Get activity id
      *
-     * @return ?integer
+     * @return ?int
      */
     public function getId(): ?int
     {
@@ -336,7 +336,7 @@ class Activity
     /**
      * Get creation date
      *
-     * @param boolean $formatted Return date formatted, raw if false
+     * @param bool $formatted Return date formatted, raw if false
      *
      * @return string
      */

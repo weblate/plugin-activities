@@ -85,7 +85,7 @@ class Subscription
      *
      * @param int $id the identifiant for the subscription to load
      *
-     * @return boolean
+     * @return bool
      */
     public function load(int $id): bool
     {
@@ -136,7 +136,7 @@ class Subscription
     /**
      * Remove specified subscription
      *
-     * @return boolean
+     * @return bool
      */
     public function remove(): bool
     {
@@ -177,7 +177,7 @@ class Subscription
      * @param array<string,mixed> $values All values to check, basically the $_POST array
      *                                    after sending the form
      *
-     * @return boolean
+     * @return bool
      */
     public function check(array $values): bool
     {
@@ -249,7 +249,7 @@ class Subscription
     /**
      * Store the subscription
      *
-     * @return boolean
+     * @return bool
      */
     public function store(): bool
     {
@@ -341,7 +341,7 @@ class Subscription
     /**
      * Get activity id
      *
-     * @return ?integer
+     * @return ?int
      */
     public function getId(): ?int
     {
@@ -351,7 +351,7 @@ class Subscription
     /**
      * Get activity id
      *
-     * @return ?integer
+     * @return ?int
      */
     public function getActivityId(): ?int
     {
@@ -388,7 +388,7 @@ class Subscription
     /**
      * Get member id
      *
-     * @return ?integer
+     * @return ?int
      */
     public function getMemberId(): ?int
     {
@@ -411,7 +411,7 @@ class Subscription
     /**
      * Is subscription paid?
      *
-     * @return boolean
+     * @return bool
      */
     public function isPaid(): bool
     {
@@ -431,7 +431,7 @@ class Subscription
     /**
      * Get payment method
      *
-     * @return integer
+     * @return int
      */
     public function getPaymentMethod(): int
     {
@@ -452,7 +452,7 @@ class Subscription
     /**
      * Get creation date
      *
-     * @param boolean $formatted Return date formatted, raw if false
+     * @param bool $formatted Return date formatted, raw if false
      *
      * @return string
      */
@@ -464,7 +464,7 @@ class Subscription
     /**
      * Get subscription date
      *
-     * @param boolean $formatted Return date formatted, raw if false
+     * @param bool $formatted Return date formatted, raw if false
      *
      * @return string
      */
@@ -476,7 +476,7 @@ class Subscription
     /**
      * Get end date
      *
-     * @param boolean $formatted Return date formatted, raw if false
+     * @param bool $formatted Return date formatted, raw if false
      *
      * @return string
      */
@@ -488,7 +488,7 @@ class Subscription
     /**
      * Set activity
      *
-     * @param integer $activity Activity id
+     * @param int $activity Activity id
      *
      * @return self
      */
@@ -502,7 +502,7 @@ class Subscription
     /**
      * Set member
      *
-     * @param integer $member Member id
+     * @param int $member Member id
      *
      * @return self
      */
@@ -536,7 +536,7 @@ class Subscription
     /**
      * Get row class related to current subscription status
      *
-     * @param boolean $public we want the class for public pages
+     * @param bool $public we want the class for public pages
      *
      * @return string the class to apply
      */

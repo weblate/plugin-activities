@@ -290,7 +290,7 @@ class Subscriptions
      * @param string         $field_name Field name to order by
      * @param ?array<string> $fields     SELECTE'ed fields
      *
-     * @return boolean
+     * @return bool
      */
     private function canOrderBy(string $field_name, ?array $fields): bool
     {
