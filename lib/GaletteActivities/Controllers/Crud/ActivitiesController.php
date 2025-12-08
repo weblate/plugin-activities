@@ -238,7 +238,6 @@ class ActivitiesController extends AbstractPluginController
         }
 
         $success_detected = [];
-        $warning_detected = [];
         $error_detected = [];
 
         // Validation

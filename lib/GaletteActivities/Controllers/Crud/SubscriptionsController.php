@@ -24,7 +24,6 @@ declare(strict_types=1);
 namespace GaletteActivities\Controllers\Crud;
 
 use Galette\Entity\Adherent;
-use Galette\Repository\Groups;
 use Galette\Repository\Members;
 use Galette\Controllers\Crud\AbstractPluginController;
 use GaletteActivities\Filters\SubscriptionsList;
@@ -114,10 +113,6 @@ class SubscriptionsController extends AbstractPluginController
         if ($filters->activity_filter) {
             $activity = new Activity($this->zdb, (int)$filters->activity_filter);
         }
-
-        //Groups
-        $groups = new Groups($this->zdb, $this->login);
-        $groups_list = $groups->getList();
 
         $subscriptions = new Subscriptions($this->zdb, $filters);
 
