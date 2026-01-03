@@ -437,7 +437,7 @@ class SubscriptionsController extends AbstractPluginController
     /**
      * Get redirection URI
      *
-     * @param array $args Route arguments
+     * @param array<string,mixed> $args Route arguments
      */
     public function redirectUri(array $args): string
     {
@@ -447,7 +447,7 @@ class SubscriptionsController extends AbstractPluginController
     /**
      * Get form URI
      *
-     * @param array $args Route arguments
+     * @param array<string,mixed> $args Route arguments
      */
     public function formUri(array $args): string
     {
@@ -460,7 +460,7 @@ class SubscriptionsController extends AbstractPluginController
     /**
      * Get confirmation removal page title
      *
-     * @param array $args Route arguments
+     * @param array<string,mixed> $args Route arguments
      */
     public function confirmRemoveTitle(array $args): string
     {
@@ -478,8 +478,8 @@ class SubscriptionsController extends AbstractPluginController
     /**
      * Remove object
      *
-     * @param array $args Route arguments
-     * @param array $post POST values
+     * @param array<string,mixed> $args Route arguments
+     * @param array<string,mixed> $post POST values
      */
     protected function doDelete(array $args, array $post): bool
     {
