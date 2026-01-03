@@ -23,7 +23,7 @@ declare(strict_types=1);
 
 namespace GaletteActivities\tests\units;
 
-use Galette\GaletteTestCase;
+use Galette\Tests\GaletteTestCase;
 
 /**
  * Activity tests
