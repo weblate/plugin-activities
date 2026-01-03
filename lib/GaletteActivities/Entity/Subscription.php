@@ -84,8 +84,6 @@ class Subscription
      * Loads a subscription from its id
      *
      * @param int $id the identifiant for the subscription to load
-     *
-     * @return bool
      */
     public function load(int $id): bool
     {
@@ -114,8 +112,6 @@ class Subscription
      * Populate object from a resultset row
      *
      * @param ArrayObject<string, int|string> $r the resultset row
-     *
-     * @return void
      */
     private function loadFromRS(ArrayObject $r): void
     {
@@ -135,8 +131,6 @@ class Subscription
 
     /**
      * Remove specified subscription
-     *
-     * @return bool
      */
     public function remove(): bool
     {
@@ -176,8 +170,6 @@ class Subscription
      *
      * @param array<string,mixed> $values All values to check, basically the $_POST array
      *                                    after sending the form
-     *
-     * @return bool
      */
     public function check(array $values): bool
     {
@@ -248,8 +240,6 @@ class Subscription
 
     /**
      * Store the subscription
-     *
-     * @return bool
      */
     public function store(): bool
     {
@@ -340,8 +330,6 @@ class Subscription
 
     /**
      * Get activity id
-     *
-     * @return ?int
      */
     public function getId(): ?int
     {
@@ -350,8 +338,6 @@ class Subscription
 
     /**
      * Get activity id
-     *
-     * @return ?int
      */
     public function getActivityId(): ?int
     {
@@ -360,8 +346,6 @@ class Subscription
 
     /**
      * Get activity
-     *
-     * @return ?Activity
      */
     public function getActivity(): ?Activity
     {
@@ -373,8 +357,6 @@ class Subscription
 
     /**
      * Get amount from activity
-     *
-     * @return float|null
      */
     public function getAmountFromActivity(): ?float
     {
@@ -387,8 +369,6 @@ class Subscription
 
     /**
      * Get member id
-     *
-     * @return ?int
      */
     public function getMemberId(): ?int
     {
@@ -397,8 +377,6 @@ class Subscription
 
     /**
      * Get member
-     *
-     * @return ?Adherent
      */
     public function getMember(): ?Adherent
     {
@@ -410,8 +388,6 @@ class Subscription
 
     /**
      * Is subscription paid?
-     *
-     * @return bool
      */
     public function isPaid(): bool
     {
@@ -420,8 +396,6 @@ class Subscription
 
     /**
      * Get amount
-     *
-     * @return ?float
      */
     public function getAmount(): ?float
     {
@@ -430,8 +404,6 @@ class Subscription
 
     /**
      * Get payment method
-     *
-     * @return int
      */
     public function getPaymentMethod(): int
     {
@@ -440,8 +412,6 @@ class Subscription
 
     /**
      * Get payment method name
-     *
-     * @return string
      */
     public function getPaymentMethodName(): string
     {
@@ -453,8 +423,6 @@ class Subscription
      * Get creation date
      *
      * @param bool $formatted Return date formatted, raw if false
-     *
-     * @return string
      */
     public function getCreationDate(bool $formatted = true): string
     {
@@ -465,8 +433,6 @@ class Subscription
      * Get subscription date
      *
      * @param bool $formatted Return date formatted, raw if false
-     *
-     * @return string
      */
     public function getSubscriptionDate(bool $formatted = true): string
     {
@@ -477,8 +443,6 @@ class Subscription
      * Get end date
      *
      * @param bool $formatted Return date formatted, raw if false
-     *
-     * @return string
      */
     public function getEndDate(bool $formatted = true): string
     {
@@ -489,8 +453,6 @@ class Subscription
      * Set activity
      *
      * @param int $activity Activity id
-     *
-     * @return self
      */
     public function setActivity(int $activity): self
     {
@@ -503,8 +465,6 @@ class Subscription
      * Set member
      *
      * @param int $member Member id
-     *
-     * @return self
      */
     public function setMember(int $member): self
     {
@@ -515,8 +475,6 @@ class Subscription
 
     /**
      * Get table's name
-     *
-     * @return string
      */
     protected function getTableName(): string
     {
@@ -525,8 +483,6 @@ class Subscription
 
     /**
      * Get comment
-     *
-     * @return string
      */
     public function getComment(): string
     {
@@ -549,8 +505,6 @@ class Subscription
 
     /**
      * Set fields, must populate $this->fields
-     *
-     * @return self
      */
     protected function setFields(): self
     {

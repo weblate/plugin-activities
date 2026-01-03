@@ -34,17 +34,17 @@ use GaletteActivities\Repository\Subscriptions;
  *
  * @author Johan Cwiklinski <johan@x-tnd.be>
  *
- * @property ?string $start_date_filter
- * @property ?string $end_date_filter
- * @property ?string $rstart_date_filter
- * @property ?string $rend_date_filter
- * @property ?int $activity_filter
- * @property ?int $member_filter
- * @property int $paid_filter
- * @property int $payment_type_filter
- * @property int $date_field
+ * @property ?string    $start_date_filter
+ * @property ?string    $end_date_filter
+ * @property ?string    $rstart_date_filter
+ * @property ?string    $rend_date_filter
+ * @property ?int       $activity_filter
+ * @property ?int       $member_filter
+ * @property int        $paid_filter
+ * @property int        $payment_type_filter
+ * @property int        $date_field
  * @property array<int> $selected
- * @property string $query
+ * @property string     $query
  */
 class SubscriptionsList extends Pagination
 {
@@ -105,8 +105,6 @@ class SubscriptionsList extends Pagination
 
     /**
      * Return the default direction for ordering
-     *
-     * @return SQLOrder
      */
     protected function getDefaultDirection(): SQLOrder
     {
@@ -115,8 +113,6 @@ class SubscriptionsList extends Pagination
 
     /**
      * Reinit default parameters
-     *
-     * @return void
      */
     public function reinit(): void
     {
@@ -173,8 +169,6 @@ class SubscriptionsList extends Pagination
      *
      * @param string $name  name of the property we want to assign a value to
      * @param mixed  $value a relevant value for the property
-     *
-     * @return void
      */
     public function __set(string $name, mixed $value): void
     {

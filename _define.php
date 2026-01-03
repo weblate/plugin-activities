@@ -21,6 +21,7 @@
 
 declare(strict_types=1);
 
+/** @var \Galette\Core\Plugins $this */
 $this->register(
     'Galette Activities',   //Name
     'Activities management', //Short description

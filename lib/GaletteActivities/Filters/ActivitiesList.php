@@ -49,8 +49,6 @@ class ActivitiesList extends Pagination
 
     /**
      * Return the default direction for ordering
-     *
-     * @return SQLOrder
      */
     protected function getDefaultDirection(): SQLOrder
     {

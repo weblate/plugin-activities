@@ -159,8 +159,6 @@ class Subscriptions
      * Calculate sum of all selected subscriptions
      *
      * @param Select $select Original select
-     *
-     * @return void
      */
     private function calculateSum(Select $select): void
     {
@@ -203,8 +201,6 @@ class Subscriptions
      * Builds where clause, for filtering on simple list mode
      *
      * @param Select $select Original select
-     *
-     * @return void
      */
     private function buildWhereClause(Select $select): void
     {
@@ -289,8 +285,6 @@ class Subscriptions
      *
      * @param string         $field_name Field name to order by
      * @param ?array<string> $fields     SELECTE'ed fields
-     *
-     * @return bool
      */
     private function canOrderBy(string $field_name, ?array $fields): bool
     {
@@ -362,8 +356,6 @@ class Subscriptions
      * Count activities from the query
      *
      * @param Select $select Original select
-     *
-     * @return void
      */
     private function proceedCount(Select $select): void
     {
@@ -414,8 +406,6 @@ class Subscriptions
 
     /**
      * Get count for current query
-     *
-     * @return int
      */
     public function getCount(): int
     {
@@ -424,8 +414,6 @@ class Subscriptions
 
     /**
      * Get sum
-     *
-     * @return double
      */
     public function getSum(): float
     {

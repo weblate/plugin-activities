@@ -79,8 +79,6 @@ class Activity
      * Loads an activity from its id
      *
      * @param int $id the identifiant for the activity to load
-     *
-     * @return bool
      */
     public function load(int $id): bool
     {
@@ -108,8 +106,6 @@ class Activity
      * Populate object from a resultset row
      *
      * @param ArrayObject<string, string|int> $r the resultset row
-     *
-     * @return void
      */
     private function loadFromRS(ArrayObject $r): void
     {
@@ -129,8 +125,6 @@ class Activity
 
     /**
      * Remove specified activity
-     *
-     * @return bool
      */
     public function remove(): bool
     {
@@ -170,8 +164,6 @@ class Activity
      *
      * @param array<string, mixed> $values All values to check, basically the $_POST array
      *                                     after sending the form
-     *
-     * @return bool
      */
     public function check(array $values): bool
     {
@@ -227,8 +219,6 @@ class Activity
 
     /**
      * Store the activity
-     *
-     * @return bool
      */
     public function store(): bool
     {
@@ -305,8 +295,6 @@ class Activity
 
     /**
      * Get activity id
-     *
-     * @return ?int
      */
     public function getId(): ?int
     {
@@ -315,8 +303,6 @@ class Activity
 
     /**
      * Get activity name
-     *
-     * @return string
      */
     public function getName(): string
     {
@@ -325,8 +311,6 @@ class Activity
 
     /**
      * Get activity type
-     *
-     * @return string
      */
     public function getType(): string
     {
@@ -337,8 +321,6 @@ class Activity
      * Get creation date
      *
      * @param bool $formatted Return date formatted, raw if false
-     *
-     * @return string
      */
     public function getCreationDate(bool $formatted = true): string
     {
@@ -347,8 +329,6 @@ class Activity
 
     /**
      * Get price
-     *
-     * @return ?float
      */
     public function getPrice(): ?float
     {
@@ -357,8 +337,6 @@ class Activity
 
     /**
      * Get Group
-     *
-     * @return ?Group
      */
     public function getGroup(): ?Group
     {
@@ -367,8 +345,6 @@ class Activity
 
     /**
      * Get table's name
-     *
-     * @return string
      */
     protected function getTableName(): string
     {
@@ -377,8 +353,6 @@ class Activity
 
     /**
      * Get comment
-     *
-     * @return string
      */
     public function getComment(): string
     {
@@ -397,8 +371,6 @@ class Activity
 
     /**
      * Set fields, must populate $this->fields
-     *
-     * @return self
      */
     protected function setFields(): self
     {

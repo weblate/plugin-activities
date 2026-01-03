@@ -57,8 +57,6 @@ class SubscriptionsController extends AbstractPluginController
      * @param Request  $request  PSR Request
      * @param Response $response PSR Response
      * @param int|null $id_adh   Member id
-     *
-     * @return Response
      */
     public function add(Request $request, Response $response, ?int $id_adh = null): Response
     {
@@ -70,8 +68,6 @@ class SubscriptionsController extends AbstractPluginController
      *
      * @param Request  $request  PSR Request
      * @param Response $response PSR Response
-     *
-     * @return Response
      */
     public function doAdd(Request $request, Response $response): Response
     {
@@ -88,8 +84,6 @@ class SubscriptionsController extends AbstractPluginController
      * @param Response        $response PSR Response
      * @param string|null     $option   One of 'page' or 'order'
      * @param string|int|null $value    Value of the option
-     *
-     * @return Response
      */
     public function list(Request $request, Response $response, ?string $option = null, string|int|null $value = null): Response
     {
@@ -161,8 +155,6 @@ class SubscriptionsController extends AbstractPluginController
      *
      * @param Request  $request  PSR Request
      * @param Response $response PSR Response
-     *
-     * @return Response
      */
     public function filter(Request $request, Response $response): Response
     {
@@ -242,8 +234,6 @@ class SubscriptionsController extends AbstractPluginController
      * @param int|null $id       Model id
      * @param string   $action   Action
      * @param int|null $id_adh   Member ID (for add)
-     *
-     * @return Response
      */
     public function edit(Request $request, Response $response, ?int $id = null, string $action = 'edit', ?int $id_adh = null): Response
     {
@@ -323,8 +313,6 @@ class SubscriptionsController extends AbstractPluginController
      * @param Response $response PSR Response
      * @param null|int $id       Model id for edit
      * @param string   $action   Either add or edit
-     *
-     * @return Response
      */
     public function doEdit(Request $request, Response $response, ?int $id = null, string $action = 'edit'): Response
     {
@@ -450,8 +438,6 @@ class SubscriptionsController extends AbstractPluginController
      * Get redirection URI
      *
      * @param array $args Route arguments
-     *
-     * @return string
      */
     public function redirectUri(array $args): string
     {
@@ -462,8 +448,6 @@ class SubscriptionsController extends AbstractPluginController
      * Get form URI
      *
      * @param array $args Route arguments
-     *
-     * @return string
      */
     public function formUri(array $args): string
     {
@@ -477,8 +461,6 @@ class SubscriptionsController extends AbstractPluginController
      * Get confirmation removal page title
      *
      * @param array $args Route arguments
-     *
-     * @return string
      */
     public function confirmRemoveTitle(array $args): string
     {
@@ -498,8 +480,6 @@ class SubscriptionsController extends AbstractPluginController
      *
      * @param array $args Route arguments
      * @param array $post POST values
-     *
-     * @return bool
      */
     protected function doDelete(array $args, array $post): bool
     {
@@ -512,8 +492,6 @@ class SubscriptionsController extends AbstractPluginController
 
     /**
      * Get default filter name
-     *
-     * @return string
      */
     public static function getDefaultFilterName(): string
     {
