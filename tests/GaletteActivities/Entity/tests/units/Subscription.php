@@ -36,8 +36,6 @@ class Subscription extends GaletteTestCase
 
     /**
      * Cleanup after each test method
-     *
-     * @return void
      */
     public function tearDown(): void
     {
@@ -58,8 +56,6 @@ class Subscription extends GaletteTestCase
 
     /**
      * Test empty
-     *
-     * @return void
      */
     public function testEmpty(): void
     {
@@ -83,8 +79,6 @@ class Subscription extends GaletteTestCase
 
     /**
      * Test add and update
-     *
-     * @return void
      */
     public function testCrud(): void
     {
@@ -291,8 +285,6 @@ class Subscription extends GaletteTestCase
 
     /**
      * Test load error
-     *
-     * @return void
      */
     public function testLoadError(): void
     {
