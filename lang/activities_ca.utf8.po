@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2024-09-10 22:29+0200\n"
-"PO-Revision-Date: 2026-01-28 11:39+0000\n"
+"PO-Revision-Date: 2026-01-28 15:00+0000\n"
 "Last-Translator: Laura Quintana Marín <2001lauraquintana@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/galette/plugins-"
 "activities/ca/>\n"
@@ -53,7 +53,7 @@ msgstr ""
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:271
 #: ../tempcache/subscriptions.html.twig:206
 msgid "Subscription"
-msgstr ""
+msgstr "Subscripció"
 
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:374
 msgid "New subscription has been successfully added."
@@ -189,7 +189,7 @@ msgstr ""
 #: ../tempcache/subscriptions.html.twig:449
 #: ../tempcache/subscription.html.twig:138
 msgid "Amount"
-msgstr ""
+msgstr "Quantitat"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:581
 msgid "Payment method"
@@ -242,7 +242,7 @@ msgstr ""
 #: ../tempcache/subscriptions.html.twig:441
 #: ../tempcache/subscription.html.twig:83
 msgid "End date"
-msgstr ""
+msgstr "Data de finalització"
 
 #: ../tempcache/subscriptions.html.twig:103
 #: ../tempcache/subscriptions.html.twig:282
