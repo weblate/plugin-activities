@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2024-09-10 22:29+0200\n"
-"PO-Revision-Date: 2026-01-28 11:22+0000\n"
+"PO-Revision-Date: 2026-01-28 11:39+0000\n"
 "Last-Translator: Laura Quintana Marín <2001lauraquintana@gmail.com>\n"
 "Language-Team: Catalan <https://hosted.weblate.org/projects/galette/plugins-"
 "activities/ca/>\n"
@@ -114,7 +114,7 @@ msgstr ""
 #: ../lib/GaletteActivities/Entity/Activity.php:412
 #: ../tempcache/activities.html.twig:100
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:416
 #: ../tempcache/activities.html.twig:100 ../tempcache/activities.html.twig:167
@@ -136,7 +136,7 @@ msgstr ""
 #: ../tempcache/activities.html.twig:100 ../tempcache/activities.html.twig:181
 #: ../tempcache/subscription.html.twig:71
 msgid "Creation date"
-msgstr ""
+msgstr "Data de creació"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:432
 #: ../lib/GaletteActivities/Entity/Subscription.php:597
