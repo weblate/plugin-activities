@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2024-09-10 22:29+0200\n"
-"PO-Revision-Date: 2025-09-15 15:52+0000\n"
-"Last-Translator: Nelson JESUS <jesus.nels@gmail.com>\n"
+"PO-Revision-Date: 2026-03-30 17:09+0000\n"
+"Last-Translator: Edson Wolf <edsonwolf@vivaldi.net>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/galette/"
 "plugins-activities/pt/>\n"
 "Language: pt\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.14-dev\n"
+"X-Generator: Weblate 5.17-dev\n"
 
 #: ../lib/GaletteActivities/Controllers/Crud/ActivitiesController.php:127
 msgid "Activities management"
@@ -36,7 +36,7 @@ msgstr "Nova atividade foi adicionada com sucesso."
 
 #: ../lib/GaletteActivities/Controllers/Crud/ActivitiesController.php:267
 msgid "Activity has been modified."
-msgstr ""
+msgstr "A atividade foi modificada."
 
 #: ../lib/GaletteActivities/Controllers/Crud/ActivitiesController.php:271
 msgid "An error occurred while storing the activity."
@@ -55,7 +55,7 @@ msgstr ""
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:271
 #: ../tempcache/subscriptions.html.twig:206
 msgid "Subscription"
-msgstr ""
+msgstr "Subscrição"
 
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:374
 msgid "New subscription has been successfully added."
