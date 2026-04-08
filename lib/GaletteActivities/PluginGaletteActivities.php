@@ -30,6 +30,8 @@ use Galette\Core\Plugins\MemberActionProviderInterface;
 use Galette\Core\Plugins\MenuProviderInterface;
 use Galette\Entity\Adherent;
 use Galette\Core\GalettePlugin;
+use GaletteActivities\Entity\Activity;
+use GaletteActivities\Entity\Subscription;
 
 /**
  * Galette Activities plugin
@@ -142,5 +144,23 @@ class PluginGaletteActivities extends GalettePlugin implements MenuProviderInter
     public function getBatchActions(): array
     {
         return [];
+    }
+
+    /**
+     * Is the plugin fully installed (including database, extra configuration, etc.)?
+     */
+    public function isInstalled(): bool
+    {
+        try {
+            $this->zdb->execute($this->zdb->select(ACTIVITIES_PREFIX . Activity::TABLE)->limit(1));
+            $this->zdb->execute($this->zdb->select(ACTIVITIES_PREFIX . Subscription::TABLE)->limit(1));
+            return true;
+        } catch (\Throwable $e) {
+            if (!$this->zdb->isMissingTableException($e)) {
+                throw $e;
+            }
+
+        }
+        return false;
     }
 }
