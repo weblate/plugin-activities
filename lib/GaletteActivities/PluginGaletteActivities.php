@@ -23,7 +23,11 @@ declare(strict_types=1);
 
 namespace GaletteActivities;
 
+use DI\Attribute\Inject;
+use Galette\Core\Db;
 use Galette\Core\Login;
+use Galette\Core\Plugins\MemberActionProviderInterface;
+use Galette\Core\Plugins\MenuProviderInterface;
 use Galette\Entity\Adherent;
 use Galette\Core\GalettePlugin;
 
@@ -33,14 +37,17 @@ use Galette\Core\GalettePlugin;
  * @author Johan Cwiklinski <johan@x-tnd.be>
  */
 
-class PluginGaletteActivities extends GalettePlugin
+class PluginGaletteActivities extends GalettePlugin implements MenuProviderInterface, MemberActionProviderInterface
 {
+    #[Inject]
+    private readonly Db $zdb; //@phpstan-ignore property.uninitializedReadonly (injected from DI)
+
     /**
-     * Extra menus entries
+     * Get plugins menus
      *
      * @return array<string, string|array<string, mixed>>
      */
-    public static function getMenusContents(): array
+    public function getMenus(): array
     {
         /** @var Login $login */
         global $login;
@@ -73,33 +80,23 @@ class PluginGaletteActivities extends GalettePlugin
     }
 
     /**
-     * Extra public menus entries
+     * Get plugins public menus
      *
      * @return array<int, string|array<string, mixed>>
      */
-    public static function getPublicMenusItemsList(): array
+    public function getPublicMenus(): array
     {
         return [];
     }
 
     /**
-     * Get dashboards contents
-     *
-     * @return array<int, string|array<string, mixed>>
-     */
-    public static function getDashboardsContents(): array
-    {
-        return [];
-    }
-
-    /**
-     * Get actions contents
+     * Get member actions
      *
      * @param Adherent $member Member instance
      *
      * @return array<int, string|array<string, mixed>>
      */
-    public static function getListActionsContents(Adherent $member): array
+    public function getListActions(Adherent $member): array
     {
         /** @var Login $login */
         global $login;
@@ -126,33 +123,23 @@ class PluginGaletteActivities extends GalettePlugin
     }
 
     /**
-     * Get detailed actions contents
+     * Get detailed member actions
      *
      * @param Adherent $member Member instance
      *
      * @return array<int, string|array<string, mixed>>
      */
-    public static function getDetailedActionsContents(Adherent $member): array
+    public function getDetailedActions(Adherent $member): array
     {
-        return static::getListActionsContents($member);
+        return $this->getListActions($member);
     }
 
     /**
-     * Get batch actions contents
+     * Get member batch actions
      *
      * @return array<int, string|array<string, mixed>>
      */
-    public static function getBatchActionsContents(): array
-    {
-        return [];
-    }
-
-    /**
-     * Get current logged-in user dashboards contents
-     *
-     * @return array<int, string|array<string,mixed>>
-     */
-    public static function getMyDashboardsContents(): array
+    public function getBatchActions(): array
     {
         return [];
     }

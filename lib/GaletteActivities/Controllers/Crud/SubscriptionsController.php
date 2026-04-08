@@ -54,9 +54,7 @@ class SubscriptionsController extends AbstractPluginController
     /**
      * Add page
      *
-     * @param Request  $request  PSR Request
-     * @param Response $response PSR Response
-     * @param int|null $id_adh   Member id
+     * @param int|null $id_adh Member id
      */
     public function add(Request $request, Response $response, ?int $id_adh = null): Response
     {
@@ -65,9 +63,6 @@ class SubscriptionsController extends AbstractPluginController
 
     /**
      * Add action
-     *
-     * @param Request  $request  PSR Request
-     * @param Response $response PSR Response
      */
     public function doAdd(Request $request, Response $response): Response
     {
@@ -80,8 +75,6 @@ class SubscriptionsController extends AbstractPluginController
     /**
      * List page
      *
-     * @param Request         $request  PSR Request
-     * @param Response        $response PSR Response
      * @param string|null     $option   One of 'page' or 'order'
      * @param string|int|null $value    Value of the option
      */
@@ -152,9 +145,6 @@ class SubscriptionsController extends AbstractPluginController
 
     /**
      * Filtering
-     *
-     * @param Request  $request  PSR Request
-     * @param Response $response PSR Response
      */
     public function filter(Request $request, Response $response): Response
     {
@@ -229,11 +219,9 @@ class SubscriptionsController extends AbstractPluginController
     /**
      * Edit page
      *
-     * @param Request  $request  PSR Request
-     * @param Response $response PSR Response
-     * @param int|null $id       Model id
-     * @param string   $action   Action
-     * @param int|null $id_adh   Member ID (for add)
+     * @param int|null $id     Model id
+     * @param string   $action Action
+     * @param int|null $id_adh Member ID (for add)
      */
     public function edit(Request $request, Response $response, ?int $id = null, string $action = 'edit', ?int $id_adh = null): Response
     {
@@ -309,8 +297,6 @@ class SubscriptionsController extends AbstractPluginController
     /**
      * Edit action
      *
-     * @param Request  $request  PSR Request
-     * @param Response $response PSR Response
      * @param null|int $id       Model id for edit
      * @param string   $action   Either add or edit
      */

@@ -23,14 +23,14 @@ declare(strict_types=1);
 
 /** @var \Galette\Core\Plugins $this */
 $this->register(
-    'Galette Activities',   //Name
-    'Activities management', //Short description
-    'Johan Cwiklinski',     //Author
-    '1.1.1',                //Version
-    '1.2.0',                //Galette compatible version
-    'activities',           //routing name and translation domain
-    '2025-12-08',           //Release date
-    [   //Permissions needed
+    name: 'Galette Activities',    //Name
+    desc: 'Activities management', //Short description
+    author: 'Johan Cwiklinski',    //Author
+    version: '1.1.2',              //Version
+    compver: '1.2.0',              //Galette compatible version
+    route: 'activities',           //routing name and translation domain
+    date: '2025-12-08',            //Release date
+    acls: [                        //Permissions needed
         '/activities_.*/'           => 'staff'
     ]
 );
