@@ -151,16 +151,8 @@ class PluginGaletteActivities extends GalettePlugin implements MenuProviderInter
      */
     public function isInstalled(): bool
     {
-        try {
-            $this->zdb->execute($this->zdb->select(ACTIVITIES_PREFIX . Activity::TABLE)->limit(1));
-            $this->zdb->execute($this->zdb->select(ACTIVITIES_PREFIX . Subscription::TABLE)->limit(1));
-            return true;
-        } catch (\Throwable $e) {
-            if (!$this->zdb->isMissingTableException($e)) {
-                throw $e;
-            }
-
-        }
-        return false;
+        return
+            $this->zdb->tableExists(ACTIVITIES_PREFIX . Activity::TABLE) &&
+            $this->zdb->tableExists(ACTIVITIES_PREFIX . Subscription::TABLE);
     }
 }
