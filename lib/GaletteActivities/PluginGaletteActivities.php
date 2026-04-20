@@ -42,7 +42,7 @@ use GaletteActivities\Entity\Subscription;
 class PluginGaletteActivities extends GalettePlugin implements MenuProviderInterface, MemberActionProviderInterface
 {
     #[Inject]
-    private readonly Db $zdb; //@phpstan-ignore property.uninitializedReadonly (injected from DI)
+    private readonly Db $zdb; //@phpstan-ignore property.uninitializedReadonly,property.onlyRead (injected from DI)
 
     /**
      * Get plugins menus
