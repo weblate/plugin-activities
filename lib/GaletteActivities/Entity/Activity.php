@@ -39,8 +39,8 @@ class Activity
 {
     use EntityHelper;
 
-    public const TABLE = 'activities';
-    public const PK = 'id_activity';
+    public const string TABLE = 'activities';
+    public const string PK = 'id_activity';
 
     private Db $zdb;
     /** @var array<string> */

@@ -44,16 +44,16 @@ class Subscriptions
     private int $count;
     private float $sum;
 
-    public const ORDERBY_ACTIVITY = 0;
-    public const ORDERBY_MEMBER = 1;
-    public const ORDERBY_SUBSCRIPTIONDATE = 2;
-    public const ORDERBY_ENDDATE = 3;
-    public const ORDERBY_PAID = 3;
-    public const ORDERBY_AMOUNT = 4;
+    public const int ORDERBY_ACTIVITY = 0;
+    public const int ORDERBY_MEMBER = 1;
+    public const int ORDERBY_SUBSCRIPTIONDATE = 2;
+    public const int ORDERBY_ENDDATE = 3;
+    public const int ORDERBY_PAID = 3;
+    public const int ORDERBY_AMOUNT = 4;
 
-    public const FILTER_DC_PAID = 0;
-    public const FILTER_PAID = 1;
-    public const FILTER_NOT_PAID = 2;
+    public const int FILTER_DC_PAID = 0;
+    public const int FILTER_PAID = 1;
+    public const int FILTER_NOT_PAID = 2;
 
     /**
      * Constructor
