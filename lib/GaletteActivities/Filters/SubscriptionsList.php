@@ -50,9 +50,9 @@ class SubscriptionsList extends Pagination
 {
     use DatesHelper;
 
-    public const DATE_END = 0;
-    public const DATE_SUBSCRIPTION = 1;
-    public const DATE_CREATION = 2;
+    public const int DATE_END = 0;
+    public const int DATE_SUBSCRIPTION = 1;
+    public const int DATE_CREATION = 2;
     //filters
     private string|int|null $activity_filter;
     private string|int|null $member_filter;

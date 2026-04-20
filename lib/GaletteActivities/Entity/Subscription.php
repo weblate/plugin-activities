@@ -39,8 +39,8 @@ class Subscription
 {
     use EntityHelper;
 
-    public const TABLE = 'subscriptions';
-    public const PK = 'id_subscription';
+    public const string TABLE = 'subscriptions';
+    public const string PK = 'id_subscription';
 
     private Db $zdb;
     /** @var array<string> */

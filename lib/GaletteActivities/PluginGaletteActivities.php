@@ -42,7 +42,7 @@ use GaletteActivities\Entity\Subscription;
 class PluginGaletteActivities extends GalettePlugin implements MenuProviderInterface, MemberActionProviderInterface
 {
     #[Inject]
-    private readonly Db $zdb; //@phpstan-ignore property.uninitializedReadonly (injected from DI)
+    private readonly Db $zdb; //@phpstan-ignore property.uninitializedReadonly,property.onlyRead (injected from DI)
 
     /**
      * Get plugins menus
@@ -151,16 +151,8 @@ class PluginGaletteActivities extends GalettePlugin implements MenuProviderInter
      */
     public function isInstalled(): bool
     {
-        try {
-            $this->zdb->execute($this->zdb->select(ACTIVITIES_PREFIX . Activity::TABLE)->limit(1));
-            $this->zdb->execute($this->zdb->select(ACTIVITIES_PREFIX . Subscription::TABLE)->limit(1));
-            return true;
-        } catch (\Throwable $e) {
-            if (!$this->zdb->isMissingTableException($e)) {
-                throw $e;
-            }
-
-        }
-        return false;
+        return
+            $this->zdb->tableExists(ACTIVITIES_PREFIX . Activity::TABLE) &&
+            $this->zdb->tableExists(ACTIVITIES_PREFIX . Subscription::TABLE);
     }
 }
