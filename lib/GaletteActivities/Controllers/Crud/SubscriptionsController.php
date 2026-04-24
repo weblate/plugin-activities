@@ -75,8 +75,8 @@ class SubscriptionsController extends AbstractPluginController
     /**
      * List page
      *
-     * @param string|null     $option   One of 'page' or 'order'
-     * @param string|int|null $value    Value of the option
+     * @param string|null     $option One of 'page' or 'order'
+     * @param string|int|null $value  Value of the option
      */
     public function list(Request $request, Response $response, ?string $option = null, string|int|null $value = null): Response
     {
@@ -297,8 +297,8 @@ class SubscriptionsController extends AbstractPluginController
     /**
      * Edit action
      *
-     * @param null|int $id       Model id for edit
-     * @param string   $action   Either add or edit
+     * @param null|int $id     Model id for edit
+     * @param string   $action Either add or edit
      */
     public function doEdit(Request $request, Response $response, ?int $id = null, string $action = 'edit'): Response
     {

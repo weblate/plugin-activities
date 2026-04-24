@@ -199,8 +199,8 @@ class ActivitiesController extends AbstractPluginController
     /**
      * Edit action
      *
-     * @param null|int $id       Model id for edit
-     * @param string   $action   Either add or edit
+     * @param null|int $id     Model id for edit
+     * @param string   $action Either add or edit
      */
     public function doEdit(Request $request, Response $response, ?int $id = null, string $action = 'edit'): Response
     {
