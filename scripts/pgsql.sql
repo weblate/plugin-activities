@@ -1,5 +1,7 @@
 --
--- Table structure for table `galette_activities_activities`
+-- This file is part of Galette Activities plugin (https://galette.eu).
+-- SPDX-FileCopyrightText: Copyright © 2024-2026 The Galette Team
+-- SPDX-License-Identifier: GPL-3.0-or-later
 --
 
 DROP SEQUENCE IF EXISTS galette_activities_activities_id_seq;

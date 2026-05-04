@@ -109,8 +109,11 @@ jobs:
 
       - name: Headers checks
         run: |
-          cd galette-core/galette/plugins/plugin-activities
-          ../../vendor/bin/docheader --docheader=../../../.docheader check lib ./*.php
+          cd galette-core
+          ./bin/console galette:headers:check \
+            --project-name="Galette Activities plugin" \
+            --start-year="2024" \
+            --directory="galette/plugins/plugin-activities"
 
   unit-tests:
     runs-on: ubuntu-latest
