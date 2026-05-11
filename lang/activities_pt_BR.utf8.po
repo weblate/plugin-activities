@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2024-09-10 22:29+0200\n"
-"PO-Revision-Date: 2026-05-09 19:11+0000\n"
+"PO-Revision-Date: 2026-05-12 22:13+0000\n"
 "Last-Translator: Edson Wolf <edsonwolf@vivaldi.net>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "galette/plugins-activities/pt_BR/>\n"
@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../lib/GaletteActivities/Controllers/Crud/ActivitiesController.php:127
 msgid "Activities management"
-msgstr ""
+msgstr "Gestão de atividades"
 
 #: ../lib/GaletteActivities/Controllers/Crud/ActivitiesController.php:199
 #: ../lib/GaletteActivities/Entity/Subscription.php:565
@@ -29,25 +29,25 @@ msgstr ""
 #: ../tempcache/subscriptions.html.twig:125
 #: ../tempcache/subscription.html.twig:109
 msgid "Activity"
-msgstr ""
+msgstr "Atividade"
 
 #: ../lib/GaletteActivities/Controllers/Crud/ActivitiesController.php:265
 msgid "New activity has been successfully added."
-msgstr ""
+msgstr "Nova atividade adicionada com sucesso."
 
 #: ../lib/GaletteActivities/Controllers/Crud/ActivitiesController.php:267
 msgid "Activity has been modified."
-msgstr ""
+msgstr "A atividade foi modificada."
 
 #: ../lib/GaletteActivities/Controllers/Crud/ActivitiesController.php:271
 msgid "An error occurred while storing the activity."
-msgstr ""
+msgstr "Ocorreu um erro ao salvar a atividade."
 
 #. TRANS %1$s is activity name
 #: ../lib/GaletteActivities/Controllers/Crud/ActivitiesController.php:356
 #, php-format
 msgid "Remove activity %1$s"
-msgstr ""
+msgstr "Remover atividade %1$s"
 
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:146
 msgid "Subscriptions management"
@@ -153,7 +153,7 @@ msgstr ""
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:218
 msgid "Member is mandatory"
-msgstr ""
+msgstr "A adesão é obrigatória"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:228
 msgid "Subscription date is mandatory"
@@ -245,7 +245,7 @@ msgstr ""
 #: ../tempcache/subscriptions.html.twig:441
 #: ../tempcache/subscription.html.twig:83
 msgid "End date"
-msgstr ""
+msgstr "Data de término"
 
 #: ../tempcache/subscriptions.html.twig:103
 #: ../tempcache/subscriptions.html.twig:282
