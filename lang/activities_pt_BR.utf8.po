@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2024-09-10 22:29+0200\n"
 "PO-Revision-Date: 2026-05-12 22:13+0000\n"
-"Last-Translator: Edson Wolf <edsonwolf@vivaldi.net>\n"
+"Last-Translator: n-qber <nmkbertozzo@gmail.com>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "galette/plugins-activities/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -51,34 +51,34 @@ msgstr "Remover atividade %1$s"
 
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:146
 msgid "Subscriptions management"
-msgstr ""
+msgstr "Gestão de assinaturas"
 
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:271
 #: ../tempcache/subscriptions.html.twig:206
 msgid "Subscription"
-msgstr ""
+msgstr "Assinatura"
 
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:374
 msgid "New subscription has been successfully added."
-msgstr ""
+msgstr "Uma nova assinatura foi adicionada com sucesso."
 
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:376
 msgid "Subscription has been modified."
-msgstr ""
+msgstr "A assinatura foi modificada."
 
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:384
 msgid "An error occurred while storing the subscription."
-msgstr ""
+msgstr "Um erro ocorreu ao armazenar a assinatura."
 
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:393
 msgid "Do not forget to store the subscription"
-msgstr ""
+msgstr "Não se esqueça de armazenar a assinatura"
 
 #. TRANS: %1$s is the member name, %2$s the activity name.
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:496
 #, php-format
 msgid "Remove subscription for %1$s on %2$s"
-msgstr ""
+msgstr "Remover assinatura de %1$s em %2$s"
 
 #: ../lib/GaletteActivities/PluginGaletteActivities.php:51
 #: ../lib/GaletteActivities/PluginGaletteActivities.php:55
@@ -87,24 +87,24 @@ msgstr "Atividades"
 
 #: ../lib/GaletteActivities/PluginGaletteActivities.php:62
 msgid "Subscriptions"
-msgstr ""
+msgstr "Assinaturas"
 
 #. TRANS %membername will be replaced with current member name
 #: ../lib/GaletteActivities/PluginGaletteActivities.php:117
 msgid "New subscription for %membername"
-msgstr ""
+msgstr "Nova inscrição para %membername"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:182
 msgid "Name is mandatory"
-msgstr ""
+msgstr "Nome é obrigatório"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:189
 msgid "Type is too long"
-msgstr ""
+msgstr "Tipo é muito longo"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:267
 msgid "Activity added"
-msgstr ""
+msgstr "Atividade adicionada"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:272
 msgid "Fail to add new activity."
