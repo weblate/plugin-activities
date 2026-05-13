@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2024-09-10 22:29+0200\n"
-"PO-Revision-Date: 2026-05-12 22:13+0000\n"
-"Last-Translator: n-qber <nmkbertozzo@gmail.com>\n"
+"PO-Revision-Date: 2026-05-14 15:13+0000\n"
+"Last-Translator: Edson Wolf <edsonwolf@vivaldi.net>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "galette/plugins-activities/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.5-dev\n"
+"X-Generator: Weblate 2026.5.dev0\n"
 
 #: ../lib/GaletteActivities/Controllers/Crud/ActivitiesController.php:127
 msgid "Activities management"
@@ -108,11 +108,11 @@ msgstr "Atividade adicionada"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:272
 msgid "Fail to add new activity."
-msgstr ""
+msgstr "Falha ao adicionar nova atividade."
 
 #: ../lib/GaletteActivities/Entity/Activity.php:291
 msgid "Activity updated"
-msgstr ""
+msgstr "Atividade atualizada"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:412
 #: ../tempcache/activities.html.twig:100
@@ -145,7 +145,7 @@ msgstr ""
 #: ../lib/GaletteActivities/Entity/Subscription.php:597
 #: ../tempcache/subscription.html.twig:121
 msgid "Comment"
-msgstr ""
+msgstr "Comentário"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:189
 msgid "Activity is mandatory"
@@ -192,7 +192,7 @@ msgstr ""
 #: ../tempcache/subscriptions.html.twig:449
 #: ../tempcache/subscription.html.twig:138
 msgid "Amount"
-msgstr ""
+msgstr "Quantia"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:581
 msgid "Payment method"
@@ -306,7 +306,7 @@ msgstr ""
 
 #: ../tempcache/activity.html.twig:64
 msgid "General information"
-msgstr ""
+msgstr "Informações gerais"
 
 #: ../tempcache/activity.html.twig:124
 msgid "Attach to group"
@@ -326,4 +326,4 @@ msgstr ""
 
 #: ../tempcache/subscription.html.twig:131
 msgid "Financial information"
-msgstr ""
+msgstr "Informações financeiras"
