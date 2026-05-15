@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2024-09-10 22:29+0200\n"
-"PO-Revision-Date: 2026-05-14 15:13+0000\n"
+"PO-Revision-Date: 2026-05-16 01:11+0000\n"
 "Last-Translator: Edson Wolf <edsonwolf@vivaldi.net>\n"
 "Language-Team: Portuguese (Brazil) <https://hosted.weblate.org/projects/"
 "galette/plugins-activities/pt_BR/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 2026.5.dev0\n"
+"X-Generator: Weblate 2026.6.dev0\n"
 
 #: ../lib/GaletteActivities/Controllers/Crud/ActivitiesController.php:127
 msgid "Activities management"
@@ -132,14 +132,14 @@ msgstr "Preço"
 #: ../lib/GaletteActivities/Entity/Activity.php:424
 #: ../tempcache/activities.html.twig:100 ../tempcache/activities.html.twig:187
 msgid "Group"
-msgstr ""
+msgstr "Grupo"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:428
 #: ../lib/GaletteActivities/Entity/Subscription.php:585
 #: ../tempcache/activities.html.twig:100 ../tempcache/activities.html.twig:181
 #: ../tempcache/subscription.html.twig:71
 msgid "Creation date"
-msgstr ""
+msgstr "Data de criação"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:432
 #: ../lib/GaletteActivities/Entity/Subscription.php:597
@@ -209,26 +209,26 @@ msgstr ""
 #, php-format
 msgid "%1$s activity"
 msgid_plural "%1$s activities"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Atividade %1$s"
+msgstr[1] "Atividades %1$s"
 
 #: ../tempcache/activities.html.twig:87
 msgid "New activity"
-msgstr ""
+msgstr "Nova atividade"
 
 #: ../tempcache/activities.html.twig:196
 #, php-format
 msgid "%1$s: edit information"
-msgstr ""
+msgstr "%1$s: editar informações"
 
 #: ../tempcache/activities.html.twig:198
 #, php-format
 msgid "%1$s: remove from database"
-msgstr ""
+msgstr "%1$s: remover do banco de dados"
 
 #: ../tempcache/activities.html.twig:234
 msgid "No activity has been found"
-msgstr ""
+msgstr "Nenhuma atividade foi encontrada"
 
 #: ../tempcache/subscriptions.html.twig:65
 #, php-format
@@ -254,7 +254,7 @@ msgstr "Data de término"
 #: ../tempcache/subscriptions.html.twig:481
 #: ../tempcache/subscription.html.twig:151
 msgid "Paid"
-msgstr ""
+msgstr "Pago"
 
 #: ../tempcache/subscriptions.html.twig:130
 msgid "All activities"
@@ -266,7 +266,7 @@ msgstr ""
 
 #: ../tempcache/subscriptions.html.twig:167
 msgid "All payment types"
-msgstr ""
+msgstr "Todos os tipos de pagamento"
 
 #: ../tempcache/subscriptions.html.twig:175
 msgid "Date type"
@@ -285,7 +285,7 @@ msgstr ""
 #: ../tempcache/subscriptions.html.twig:472
 #: ../tempcache/subscriptions.html.twig:487
 msgid "Not paid"
-msgstr ""
+msgstr "Não pago"
 
 #: ../tempcache/subscriptions.html.twig:350
 #, php-format
@@ -298,7 +298,7 @@ msgstr ""
 
 #: ../tempcache/subscriptions.html.twig:518
 msgid "Remove from database"
-msgstr ""
+msgstr "Remover do banco de dados"
 
 #: ../tempcache/subscriptions.html.twig:548
 msgid "No subscription has been found"
