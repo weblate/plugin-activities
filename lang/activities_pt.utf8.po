@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2024-09-10 22:29+0200\n"
-"PO-Revision-Date: 2026-05-26 16:11+0000\n"
-"Last-Translator: ssantos <ssantos@web.de>\n"
+"PO-Revision-Date: 2026-05-27 22:11+0000\n"
+"Last-Translator: Snowy <snowyyt@protonmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/galette/"
 "plugins-activities/pt/>\n"
 "Language: pt\n"
@@ -156,7 +156,7 @@ msgstr "O membro é obrigatório"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:228
 msgid "Subscription date is mandatory"
-msgstr ""
+msgstr "Data de subscrição é obrigatoria"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:234
 msgid "End date is mandatory"
@@ -164,19 +164,19 @@ msgstr "A data final é obrigatória"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:292
 msgid "Subscription added"
-msgstr ""
+msgstr "Subscrição adicionada"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:302
 msgid "Fail to add new subscription."
-msgstr ""
+msgstr "Falha ao adicionar nova subscrição."
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:321
 msgid "Subscription updated"
-msgstr ""
+msgstr "Subscrição atualizada"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:330
 msgid "Subscription already exists for this member and activity"
-msgstr ""
+msgstr "Subscrição já existente para este membro e atividade"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:569
 msgid "Member"
@@ -195,14 +195,14 @@ msgstr "Quantia"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:581
 msgid "Payment method"
-msgstr ""
+msgstr "Metodo de pagamento"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:589
 #: ../tempcache/subscriptions.html.twig:103
 #: ../tempcache/subscriptions.html.twig:433
 #: ../tempcache/subscription.html.twig:77
 msgid "Subscription date"
-msgstr ""
+msgstr "Data de subscrição"
 
 #: ../tempcache/activities.html.twig:62
 #, php-format
@@ -233,12 +233,12 @@ msgstr "Nenhuma atividade foi encontrada"
 #, php-format
 msgid "%1$s subscription"
 msgid_plural "%1$s subscriptions"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1$s Subscrição"
+msgstr[1] "%1$s Subscrições"
 
 #: ../tempcache/subscriptions.html.twig:90
 msgid "New subscription"
-msgstr ""
+msgstr "Nova subscrição"
 
 #: ../tempcache/subscriptions.html.twig:103
 #: ../tempcache/subscriptions.html.twig:441
@@ -257,11 +257,11 @@ msgstr "Pago"
 
 #: ../tempcache/subscriptions.html.twig:130
 msgid "All activities"
-msgstr ""
+msgstr "Todas as atividades"
 
 #: ../tempcache/subscriptions.html.twig:159
 msgid "Search or pick a member"
-msgstr ""
+msgstr "Procurar ou selecionar um membro"
 
 #: ../tempcache/subscriptions.html.twig:167
 msgid "All payment types"
@@ -269,7 +269,7 @@ msgstr "Todos os tipos de pagamento"
 
 #: ../tempcache/subscriptions.html.twig:175
 msgid "Date type"
-msgstr ""
+msgstr "Tipo de data"
 
 #: ../tempcache/subscriptions.html.twig:186
 msgid "Creation"
@@ -277,7 +277,7 @@ msgstr "Criação"
 
 #: ../tempcache/subscriptions.html.twig:252
 msgid "Paid subscription:"
-msgstr ""
+msgstr "Subscrição Paga:"
 
 #: ../tempcache/subscriptions.html.twig:298
 #: ../tempcache/subscriptions.html.twig:460
@@ -289,11 +289,11 @@ msgstr "Não pago"
 #: ../tempcache/subscriptions.html.twig:350
 #, php-format
 msgid "Found subscriptions total %f"
-msgstr ""
+msgstr "Encontrado um total de %f subscrições"
 
 #: ../tempcache/subscriptions.html.twig:506
 msgid "Edit subscription"
-msgstr ""
+msgstr "Editar subscrições"
 
 #: ../tempcache/subscriptions.html.twig:518
 msgid "Remove from database"
@@ -301,7 +301,7 @@ msgstr "Remover da base de dados"
 
 #: ../tempcache/subscriptions.html.twig:548
 msgid "No subscription has been found"
-msgstr ""
+msgstr "Nenhuma subscrição foi encontrada"
 
 #: ../tempcache/activity.html.twig:64
 msgid "General information"
@@ -309,19 +309,19 @@ msgstr "Informações gerais"
 
 #: ../tempcache/activity.html.twig:124
 msgid "Attach to group"
-msgstr ""
+msgstr "Associar um grupo"
 
 #: ../tempcache/activity.html.twig:124
 msgid "Group to attach members that subscribes to activity."
-msgstr ""
+msgstr "Grupo para associar membros que se inscrevem na atividade."
 
 #: ../tempcache/subscription.html.twig:64
 msgid "Subscription information"
-msgstr ""
+msgstr "Informação de subscrição"
 
 #: ../tempcache/subscription.html.twig:88
 msgid "Select an activity"
-msgstr ""
+msgstr "Selecionar uma atividade"
 
 #: ../tempcache/subscription.html.twig:131
 msgid "Financial information"
