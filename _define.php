@@ -19,5 +19,6 @@ $this->register(
     date: '2025-12-08',            //Release date
     acls: [                        //Permissions needed
         '/activities_.*/'           => 'staff'
-    ]
+    ],
+    dbver: 1.00
 );
