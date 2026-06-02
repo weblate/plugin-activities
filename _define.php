@@ -14,7 +14,7 @@ $this->register(
     desc: 'Activities management', //Short description
     author: 'Johan Cwiklinski',    //Author
     version: '1.1.2',              //Version
-    compver: '1.2.0',              //Galette compatible version
+    compver: '1.3.0',              //Galette compatible version
     route: 'activities',           //routing name and translation domain
     date: '2025-12-08',            //Release date
     acls: [                        //Permissions needed
