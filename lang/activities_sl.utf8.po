@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@galette.eu\n"
 "POT-Creation-Date: 2024-09-10 22:29+0200\n"
-"PO-Revision-Date: 2026-07-09 08:51+0000\n"
+"PO-Revision-Date: 2026-07-11 10:39+0000\n"
 "Last-Translator: Jože Felicijan <joze@felicijan.com>\n"
 "Language-Team: Slovenian <https://hosted.weblate.org/projects/galette/"
 "plugins-activities/sl/>\n"
@@ -57,7 +57,7 @@ msgstr ""
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:271
 #: ../tempcache/subscriptions.html.twig:206
 msgid "Subscription"
-msgstr ""
+msgstr "Naročnina"
 
 #: ../lib/GaletteActivities/Controllers/Crud/SubscriptionsController.php:374
 msgid "New subscription has been successfully added."
@@ -123,7 +123,7 @@ msgstr "Ime"
 #: ../lib/GaletteActivities/Entity/Activity.php:416
 #: ../tempcache/activities.html.twig:100 ../tempcache/activities.html.twig:167
 msgid "Type"
-msgstr ""
+msgstr "Vrsta"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:420
 #: ../tempcache/activities.html.twig:100 ../tempcache/activities.html.twig:173
@@ -133,20 +133,20 @@ msgstr ""
 #: ../lib/GaletteActivities/Entity/Activity.php:424
 #: ../tempcache/activities.html.twig:100 ../tempcache/activities.html.twig:187
 msgid "Group"
-msgstr ""
+msgstr "Skupina"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:428
 #: ../lib/GaletteActivities/Entity/Subscription.php:585
 #: ../tempcache/activities.html.twig:100 ../tempcache/activities.html.twig:181
 #: ../tempcache/subscription.html.twig:71
 msgid "Creation date"
-msgstr ""
+msgstr "Datum nastanka"
 
 #: ../lib/GaletteActivities/Entity/Activity.php:432
 #: ../lib/GaletteActivities/Entity/Subscription.php:597
 #: ../tempcache/subscription.html.twig:121
 msgid "Comment"
-msgstr ""
+msgstr "Komentar"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:189
 msgid "Activity is mandatory"
@@ -193,7 +193,7 @@ msgstr ""
 #: ../tempcache/subscriptions.html.twig:449
 #: ../tempcache/subscription.html.twig:138
 msgid "Amount"
-msgstr ""
+msgstr "Znesek"
 
 #: ../lib/GaletteActivities/Entity/Subscription.php:581
 msgid "Payment method"
@@ -246,7 +246,7 @@ msgstr ""
 #: ../tempcache/subscriptions.html.twig:441
 #: ../tempcache/subscription.html.twig:83
 msgid "End date"
-msgstr ""
+msgstr "Končni datum"
 
 #: ../tempcache/subscriptions.html.twig:103
 #: ../tempcache/subscriptions.html.twig:282
