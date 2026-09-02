@@ -1,6 +1,6 @@
 # Galette Activities plugin
 
-[![GitHub license](https://img.shields.io/github/license/galette/galette.svg)](https://github.com/galette/plugin-activities/blob/master/COPYING)
+[![GitHub license](https://img.shields.io/github/license/galette/plugin-activities)](https://github.com/galette/plugin-activities/blob/master/COPYING)
 
 ### English
 
